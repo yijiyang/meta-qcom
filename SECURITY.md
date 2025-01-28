@@ -18,4 +18,4 @@ Branches maintained with security fixes
 ---------------------------------------
 
 See https://wiki.yoctoproject.org/wiki/Releases for the list of current
-releases. We only accept patches for the LTS releases and the main branch.
+releases. We only accept patches for the LTS releases and the master branch.
