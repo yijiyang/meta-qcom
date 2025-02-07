@@ -92,3 +92,23 @@ jobs:
           event_name: ${{ github.event.workflow_run.event }}
           files: "${{ github.workspace }}/artifacts/**/*.xml"
 
+      - name: Prepare PR comment
+        id: pr_comment_prep
+        run: |
+          echo "## Test jobs for commit ${{ github.event.workflow_run.head_sha }}" > pr-comment.txt
+          for json_file in $(find ${{ github.workspace }} -name "test-job-*.json")
+          do
+              DEVICE_TYPE=$(cat "$json_file" | jq -r ".requested_device_type")
+              URL=$(cat "$json_file" | jq -r ".url")
+              JOB_ID=$(cat "$json_file" | jq -r ".id")
+              echo " * [Job $JOB_ID on $DEVICE_TYPE]($URL)"
+              echo " * [Job $JOB_ID on $DEVICE_TYPE]($URL)" >> pr-comment.txt
+          done
+          PR_NUMBER=$(cat "artifacts/Event File/event.json" | jq -r ".number")
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          file-path: pr-comment.txt
+          pr-number: ${{ steps.pr_comment_prep.outputs.pr_number }}
