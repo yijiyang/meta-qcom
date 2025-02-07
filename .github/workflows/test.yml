@@ -92,3 +92,14 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           files: "${{ github.workspace }}/artifacts/**/*.xml"
+
+      - name: Publish Test Job Details
+        run: |
+          for json_file in $(find ${{ github.workspace }} -name "test-job-*.json")
+          do
+              DEVICE_TYPE=$(cat "$json_file" | jq -r ".requested_device_type")
+              URL=$(cat "$json_file" | jq -r ".url")
+              JOB_ID=$(cat "$json_file" | jq -r ".id")
+              echo " * [Job $JOB_ID on $DEVICE_TYPE]($URL)"
+              echo " * [Job $JOB_ID on $DEVICE_TYPE]($URL)" >> $GITHUB_STEP_SUMMARY
+          done
