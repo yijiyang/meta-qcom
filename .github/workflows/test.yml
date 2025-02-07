@@ -59,7 +59,7 @@ jobs:
 
       - name: Submit ${{ matrix.target }}
         timeout-minutes: 20
-        uses: foundriesio/lava-action@v5
+        uses: foundriesio/lava-action@v6
         with:
           lava_token: ${{ secrets.LAVATOKEN }}
           lava_url: 'lava.infra.foundries.io'
@@ -67,6 +67,7 @@ jobs:
           wait_for_job: true
           fail_action_on_failure: false
           save_result_as_artifact: true
+          save_job_details: true
 
   publish-test-results:
     name: "Publish Tests Results"
