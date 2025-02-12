@@ -22,7 +22,7 @@ PREFERRED_PROVIDER_virtual/kernel ??= "linux-linaro-qcomlt"
 
 PREFERRED_PROVIDER_android-tools-conf = "android-tools-conf-configfs"
 
-PREFERRED_VERSION_linux-yocto ?= "6.6%"
+PREFERRED_VERSION_linux-yocto ?= "6.12%"
 
 # Fastboot expects an ext4 image, which needs to be 4096 aligned
 IMAGE_FSTYPES ?= "ext4.gz"
