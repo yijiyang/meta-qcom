@@ -10,7 +10,7 @@ NO_GENERIC_LICENSE[dspso-qcom] = "LICENSE.qcom"
 
 SRC_URI = "git://github.com/linux-msm/dsp-binaries;protocol=https;branch=trunk"
 
-SRCREV = "744ee1450a5e73ab041cb55cb134898e34ebbbbb"
+SRCREV = "c99bb9ff3001a1c59c5bc93f8f627bca44ce67dc"
 
 S = "${WORKDIR}/git"
 
@@ -63,8 +63,8 @@ FILES:${PN}-thundercomm-db845c-sdsp = "${datadir}/qcom/sdm845/Thundercomm/db845c
 FILES:${PN}-thundercomm-rb1-adsp = "${datadir}/qcom/qcm2290/Thundercomm/RB1/dsp/adsp"
 FILES:${PN}-thundercomm-rb2-adsp = "${datadir}/qcom/qrb4210/Thundercomm/RB2/dsp/adsp"
 FILES:${PN}-thundercomm-rb2-cdsp = "${datadir}/qcom/qrb4210/Thundercomm/RB2/dsp/cdsp"
-FILES:${PN}-thundercomm-rb3gen2-adsp = "${datadir}/qcom/qrb4210/Thundercomm/RB2/dsp/adsp"
-FILES:${PN}-thundercomm-rb3gen2-cdsp = "${datadir}/qcom/qrb4210/Thundercomm/RB2/dsp/cdsp"
+FILES:${PN}-thundercomm-rb3gen2-adsp = "${datadir}/qcom/qcm6490/Thundercomm/RB3gen2/dsp/adsp"
+FILES:${PN}-thundercomm-rb3gen2-cdsp = "${datadir}/qcom/qcm6490/Thundercomm/RB3gen2/dsp/cdsp"
 FILES:${PN}-thundercomm-rb5-adsp = "${datadir}/qcom/sm8250/Thundercomm/RB5/dsp/adsp"
 FILES:${PN}-thundercomm-rb5-cdsp = "${datadir}/qcom/sm8250/Thundercomm/RB5/dsp/cdsp"
 FILES:${PN}-thundercomm-rb5-sdsp = "${datadir}/qcom/sm8250/Thundercomm/RB5/dsp/sdsp"
