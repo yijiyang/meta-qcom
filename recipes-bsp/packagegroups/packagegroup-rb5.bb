@@ -14,10 +14,12 @@ RRECOMMENDS:${PN}-firmware = " \
     linux-firmware-lt9611uxc \
     linux-firmware-qcom-sm8250-audio \
     linux-firmware-qcom-sm8250-compute \
+    linux-firmware-qcom-sm8250-thundercomm-rb5-sensors \
     linux-firmware-qcom-vpu \
 "
 
 RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
     hexagon-dsp-binaries-thundercomm-rb5-adsp \
     hexagon-dsp-binaries-thundercomm-rb5-cdsp \
+    hexagon-dsp-binaries-thundercomm-rb5-sdsp \
 "
