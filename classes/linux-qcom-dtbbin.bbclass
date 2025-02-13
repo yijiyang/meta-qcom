@@ -17,7 +17,7 @@ do_qcom_dtbbin_deploy() {
         dtb_base_name=`basename $dtb .$dtb_ext`
         mkdir -p ${DTBBIN_DEPLOYDIR}/$dtb_base_name
         cp ${D}/${KERNEL_DTBDEST}/$dtb_base_name.dtb ${DTBBIN_DEPLOYDIR}/$dtb_base_name/combined-dtb.dtb
-        mkfs.vfat $@ -C ${DTBBIN_DEPLOYDIR}/dtb-${dtb_base_name}-image.vfat ${DTBBIN_SIZE}
+        mkfs.vfat -C ${DTBBIN_DEPLOYDIR}/dtb-${dtb_base_name}-image.vfat ${DTBBIN_SIZE}
         mcopy -i "${DTBBIN_DEPLOYDIR}/dtb-${dtb_base_name}-image.vfat" -vsmpQ ${DTBBIN_DEPLOYDIR}/$dtb_base_name/* ::/
         rm -rf ${DTBBIN_DEPLOYDIR}/$dtb_base_name
     done
