@@ -8,11 +8,17 @@ LICENSE = "dspso-qcom"
 LIC_FILES_CHKSUM = "file://LICENSE.qcom;md5=56e86b6c508490dadc343f39468b5f5e"
 NO_GENERIC_LICENSE[dspso-qcom] = "LICENSE.qcom"
 
-SRC_URI = "git://github.com/linux-msm/dsp-binaries;protocol=https;branch=trunk"
+SRC_URI = " \
+    git://github.com/linux-msm/dsp-binaries;protocol=https;branch=trunk \
+    file://0001-Makefile-provide-clean-target.patch \
+"
 
 SRCREV = "c99bb9ff3001a1c59c5bc93f8f627bca44ce67dc"
 
 S = "${WORKDIR}/git"
+
+# There is no "make clean"
+CLEANBROKEN = "1"
 
 inherit allarch
 
