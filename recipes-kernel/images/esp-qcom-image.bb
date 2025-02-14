@@ -13,9 +13,7 @@ inherit image
 IMAGE_FSTYPES = "vfat"
 IMAGE_FSTYPES_DEBUGFS = ""
 
-# UFS requires vfat sector size of 4096 (default is 512)
-VFAT_SECTOR_SIZE ?= "4096"
-EXTRA_IMAGECMD:vfat += " -S ${VFAT_SECTOR_SIZE}"
+EXTRA_IMAGECMD:vfat += " -S ${QCOM_VFAT_SECTOR_SIZE}"
 
 # Align image size with the expected partition size (512MB)
 IMAGE_ROOTFS_SIZE = "524288"
