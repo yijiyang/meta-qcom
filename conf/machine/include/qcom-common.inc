@@ -32,6 +32,9 @@ IMAGE_ROOTFS_ALIGNMENT ?= "4096"
 QCOM_BOOTIMG_KERNEL_BASE ?= "0x80000000"
 QCOM_BOOTIMG_PAGE_SIZE ?= "4096"
 
+# Default vfat sector size to 4096, compatible with UFS
+QCOM_VFAT_SECTOR_SIZE ??= "4096"
+
 # Default serial console for QCOM devices
 SERIAL_CONSOLES ?= "115200;ttyMSM0"
 
