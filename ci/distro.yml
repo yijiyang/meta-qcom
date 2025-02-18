@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/siemens/kas/master/kas/schema-kas.json
+
+header:
+  version: 14
+
+distro: qcom-wayland
+
+repos:
+  meta-qcom-distro:
+    url: https://github.com/qualcomm-linux/meta-qcom-distro
+    branch: main
