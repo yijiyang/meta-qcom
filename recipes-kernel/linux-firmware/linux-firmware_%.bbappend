@@ -10,3 +10,6 @@ ALTERNATIVE_LINK_NAME[ar6004-hw13-bdata] = "${nonarch_base_libdir}/firmware/ath6
 
 ALTERNATIVE:${PN}-ath11k-wcn6750:qcom += "wcn6750-hw10-board-2"
 ALTERNATIVE_LINK_NAME[wcn6750-hw10-board-2] = "${nonarch_base_libdir}/firmware/ath11k/WCN6750/hw1.0/board-2.bin"
+
+# temporal workaround until this RPROVIDES is merged into OE-Core
+RPROVIDES:${PN}-qcom-qcm6490-wifi:qcom = "${PN}-qcom-qcs6490-wifi"
