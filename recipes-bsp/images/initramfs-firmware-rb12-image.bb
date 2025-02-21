@@ -6,9 +6,6 @@ PACKAGE_INSTALL += " \
 "
 
 BAD_RECOMMENDATIONS = " \
-    hexagon-dsp-binaries-thundercomm-rb1-adsp \
-    hexagon-dsp-binaries-thundercomm-rb2-adsp \
-    hexagon-dsp-binaries-thundercomm-rb2-cdsp \
     linux-firmware-qcom-venus-6.0 \
 "
 
