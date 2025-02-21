@@ -2,7 +2,11 @@ SUMMARY = "Firmware packages for the RB5 Robotics platform"
 
 inherit packagegroup
 
-RRECOMMENDS:${PN} += " \
+PACKAGES = " \
+    ${PN}-firmware \
+"
+
+RRECOMMENDS:${PN}-firmware = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'linux-firmware-qcom-adreno-a650 linux-firmware-qcom-sm8250-adreno', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'linux-firmware-ath11k-qca6390', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'linux-firmware-qca-qca6390', '', d)} \

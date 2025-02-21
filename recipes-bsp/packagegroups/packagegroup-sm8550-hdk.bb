@@ -1,6 +1,10 @@
 inherit packagegroup
 
-RRECOMMENDS:${PN} += " \
+PACKAGES = " \
+    ${PN}-firmware \
+"
+
+RRECOMMENDS:${PN}-firmware = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'linux-firmware-qcom-adreno-a740 linux-firmware-qcom-sm8550-adreno', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'linux-firmware-qca-wcn7850', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'linux-firmware-ath12k-wcn7850', '', d)} \

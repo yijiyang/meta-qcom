@@ -2,7 +2,11 @@ SUMMARY = "Firmware packages for the RB1 Robotics platform"
 
 inherit packagegroup
 
-RRECOMMENDS:${PN} += " \
+PACKAGES = " \
+    ${PN}-firmware \
+"
+
+RRECOMMENDS:${PN}-firmware = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'linux-firmware-qcom-adreno-a702 linux-firmware-qcom-qcm2290-adreno', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'linux-firmware-ath10k-wcn3990 linux-firmware-qcom-qcm2290-wifi ', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'linux-firmware-qca-wcn3950', '', d)} \
