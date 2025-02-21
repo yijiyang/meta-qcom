@@ -1,9 +1,10 @@
-SUMMARY = "Firmware packages for the RB1 Robotics platform"
+SUMMARY = "Packages for the RB1 Robotics platform"
 
 inherit packagegroup
 
 PACKAGES = " \
     ${PN}-firmware \
+    ${PN}-hexagon-dsp-binaries \
 "
 
 RRECOMMENDS:${PN}-firmware = " \
@@ -14,5 +15,8 @@ RRECOMMENDS:${PN}-firmware = " \
     linux-firmware-qcom-qcm2290-audio \
     linux-firmware-qcom-qcm2290-modem \
     linux-firmware-qcom-venus-6.0 \
+"
+
+RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
     hexagon-dsp-binaries-thundercomm-rb1-adsp \
 "

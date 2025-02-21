@@ -1,4 +1,4 @@
-SUMMARY = "Firmware packages for the SM8450-HDK board"
+SUMMARY = "Packages for the SM8450-HDK board"
 
 inherit packagegroup
 

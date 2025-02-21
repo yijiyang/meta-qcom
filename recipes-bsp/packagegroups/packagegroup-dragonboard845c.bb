@@ -1,9 +1,10 @@
-SUMMARY = "Firmware packages for the DragonBoard 845c board"
+SUMMARY = "Packages for the DragonBoard 845c board"
 
 inherit packagegroup
 
 PACKAGES = " \
     ${PN}-firmware \
+    ${PN}-hexagon-dsp-binaries \
 "
 
 RRECOMMENDS:${PN}-firmware = " \
@@ -13,6 +14,9 @@ RRECOMMENDS:${PN}-firmware = " \
     linux-firmware-qcom-sdm845-audio \
     linux-firmware-qcom-sdm845-compute \
     linux-firmware-qcom-venus-5.2 \
+"
+
+RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
     hexagon-dsp-binaries-thundercomm-db845c-adsp \
     hexagon-dsp-binaries-thundercomm-db845c-cdsp \
 "

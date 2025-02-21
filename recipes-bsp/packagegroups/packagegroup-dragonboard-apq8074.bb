@@ -1,4 +1,4 @@
-SUMMARY = "Firmware packages for the Dragonboard APQ8074 board"
+SUMMARY = "Packages for the Dragonboard APQ8074 board"
 
 inherit packagegroup
 

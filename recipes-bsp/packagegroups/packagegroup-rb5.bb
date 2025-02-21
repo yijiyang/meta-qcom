@@ -1,9 +1,10 @@
-SUMMARY = "Firmware packages for the RB5 Robotics platform"
+SUMMARY = "Packages for the RB5 Robotics platform"
 
 inherit packagegroup
 
 PACKAGES = " \
     ${PN}-firmware \
+    ${PN}-hexagon-dsp-binaries \
 "
 
 RRECOMMENDS:${PN}-firmware = " \
@@ -14,6 +15,9 @@ RRECOMMENDS:${PN}-firmware = " \
     linux-firmware-qcom-sm8250-audio \
     linux-firmware-qcom-sm8250-compute \
     linux-firmware-qcom-vpu \
+"
+
+RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
     hexagon-dsp-binaries-thundercomm-rb5-adsp \
     hexagon-dsp-binaries-thundercomm-rb5-cdsp \
 "

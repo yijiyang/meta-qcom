@@ -1,9 +1,10 @@
-SUMMARY = "Firmware packages for the RB3Gen2 platform"
+SUMMARY = "Packages for the RB3Gen2 platform"
 
 inherit packagegroup
 
 PACKAGES = " \
     ${PN}-firmware \
+    ${PN}-hexagon-dsp-binaries \
 "
 
 RRECOMMENDS:${PN}-firmware = " \
@@ -13,6 +14,9 @@ RRECOMMENDS:${PN}-firmware = " \
     linux-firmware-qcom-qcm6490-audio \
     linux-firmware-qcom-qcm6490-compute \
     linux-firmware-qcom-vpu \
+"
+
+RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
     hexagon-dsp-binaries-thundercomm-rb3gen2-adsp \
     hexagon-dsp-binaries-thundercomm-rb3gen2-cdsp \
 "
