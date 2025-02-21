@@ -15,6 +15,12 @@ PACKAGE_INSTALL += " \
     packagegroup-rb2-firmware \
     packagegroup-rb3gen2-firmware \
     packagegroup-rb5-firmware \
+    packagegroup-dragonboard820c-hexagon-dsp-binaries \
+    packagegroup-dragonboard845c-hexagon-dsp-binaries \
+    packagegroup-rb1-hexagon-dsp-binaries \
+    packagegroup-rb2-hexagon-dsp-binaries \
+    packagegroup-rb3gen2-hexagon-dsp-binaries \
+    packagegroup-rb5-hexagon-dsp-binaries \
 "
 
 # Qualcomm HDKs
