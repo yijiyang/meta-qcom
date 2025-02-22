@@ -13,7 +13,7 @@ SRCREV = "10997ba7c43a3787a40b6b1b161408033e716374"
 SRC_URI = "git://github.com/andersson/${BPN}.git;branch=master;protocol=https \
 "
 
-PV = "0.0+${SRCPV}"
+PV = "0.0+"
 
 S = "${WORKDIR}/git"
 

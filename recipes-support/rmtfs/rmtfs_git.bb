@@ -11,7 +11,7 @@ SRCREV = "7a5ae7e0a57be3e09e0256b51b9075ee6b860322"
 SRC_URI = "git://github.com/andersson/${BPN}.git;branch=master;protocol=https"
 DEPENDS = "qmic-native qrtr udev"
 
-PV = "0.2+${SRCPV}"
+PV = "0.2+"
 
 S = "${WORKDIR}/git"
 
