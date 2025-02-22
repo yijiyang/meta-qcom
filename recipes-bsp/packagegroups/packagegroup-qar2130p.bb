@@ -2,6 +2,7 @@ inherit packagegroup
 
 PACKAGES = " \
     ${PN}-firmware \
+    ${PN}-hexagon-dsp-binaries \
 "
 
 RRECOMMENDS:${PN}-firmware = " \
@@ -11,4 +12,9 @@ RRECOMMENDS:${PN}-firmware = " \
     firmware-qcom-qar2130p \
     linux-firmware-qcom-sar2130p-audio \
     linux-firmware-qcom-sar2130p-compute \
+"
+
+RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
+    hexagon-dsp-binaries-qcom-qar2130p-adsp \
+    hexagon-dsp-binaries-qcom-qar2130p-cdsp \
 "
