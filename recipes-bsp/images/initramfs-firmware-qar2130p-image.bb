@@ -1,7 +1,7 @@
 DESCRIPTION = "Tiny ramdisk image with QAR2130P devices firmware files"
 
 PACKAGE_INSTALL += " \
-    packagegroup-firmware-qar2130p \
+    packagegroup-qar2130p-firmware \
 "
 
 BAD_RECOMMENDATIONS = " \
