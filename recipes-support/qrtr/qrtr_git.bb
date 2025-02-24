@@ -10,7 +10,7 @@ inherit systemd
 SRCREV = "d0d471c96e7d112fac6f48bd11f9e8ce209c04d2"
 SRC_URI = "git://github.com/andersson/${BPN}.git;branch=master;protocol=https"
 
-PV = "0.3+${SRCPV}"
+PV = "0.3+"
 
 S = "${WORKDIR}/git"
 

@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ca25dbf5ebfc1a058bfc657c895aac2f"
 SRCREV = "815dd495eb087b3b3ea02a8ed43716efac43db1c"
 SRC_URI = "git://github.com/andersson/${BPN}.git;branch=master;protocol=https"
 
-PV = "0.0+${SRCPV}"
+PV = "0.0+"
 
 S = "${WORKDIR}/git"
 
