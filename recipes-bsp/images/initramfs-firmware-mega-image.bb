@@ -30,11 +30,17 @@ PACKAGE_INSTALL += " \
     packagegroup-sm8450-hdk-firmware \
     packagegroup-sm8550-hdk-firmware \
     packagegroup-sm8650-hdk-firmware \
+    packagegroup-sm8150-hdk-hexagon-dsp-binaries \
+    packagegroup-sm8350-hdk-hexagon-dsp-binaries \
+    packagegroup-sm8450-hdk-hexagon-dsp-binaries \
+    packagegroup-sm8550-hdk-hexagon-dsp-binaries \
+    packagegroup-sm8650-hdk-hexagon-dsp-binaries \
 "
 
 # Other Qualcomm DevKits
 PACKAGE_INSTALL += " \
     packagegroup-qar2130p-firmware \
+    packagegroup-qar2130p-hexagon-dsp-binaries \
 "
 
 require initramfs-firmware-image.inc

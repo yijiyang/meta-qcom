@@ -4,6 +4,7 @@ inherit packagegroup
 
 PACKAGES = " \
     ${PN}-firmware \
+    ${PN}-hexagon-dsp-binaries \
 "
 
 RRECOMMENDS:${PN}-firmware = " \
@@ -16,4 +17,9 @@ RRECOMMENDS:${PN}-firmware = " \
     linux-firmware-qcom-sm8650-audio-tplg \
     linux-firmware-qcom-sm8650-compute \
     linux-firmware-qcom-sm8650-ipa \
+"
+
+RRECOMMENDS:${PN}-hexagon-dsp-binaries = " \
+    hexagon-dsp-binaries-qcom-sm8650-hdk-adsp \
+    hexagon-dsp-binaries-qcom-sm8650-hdk-cdsp \
 "

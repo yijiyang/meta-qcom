@@ -2,7 +2,7 @@
 # NHLOS_URI:pn-firmware-qcom-sar2130p = "..."  to local.conf. Use "file://"
 # if the file is provided locally.
 
-DESCRIPTION = "QCOM Firmware for SAR2130P boards"
+DESCRIPTION = "QCOM Firmware for QAR2130P device"
 
 LICENSE = "CLOSED"
 
