@@ -23,7 +23,7 @@ repos:
       .: excluded
 
   meta-yocto:
-    url: https://git.yoctoproject.org/git/meta-yocto
+    url: https://git.yoctoproject.org/meta-yocto
     layers:
       meta-poky:
 
