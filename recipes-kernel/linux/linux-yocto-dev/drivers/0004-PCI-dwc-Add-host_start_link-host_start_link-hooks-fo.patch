@@ -1,0 +1,53 @@
+From 58ae113ed606aa0b4a1c56214ab39300cd71020e Mon Sep 17 00:00:00 2001
+From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Date: Tue, 25 Feb 2025 15:04:01 +0530
+Subject: [PATCH 4/8] PCI: dwc: Add host_start_link() & host_start_link() hooks
+ for dwc glue drivers
+
+Add host_start_link() and host_stop_link() functions to dwc glue drivers to
+register with start_link() and stop_link() of pci ops, allowing for better
+control over the link initialization and shutdown process.
+
+Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Upstream-Status: Submitted [https://lore.kernel.org/lkml/20250225-qps615_v4_1-v4-0-e08633a7bdf8@oss.qualcomm.com/T/]
+---
+ drivers/pci/controller/dwc/pcie-designware.h | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
+index 501d9ddfea16..47f34dd12c39 100644
+--- a/drivers/pci/controller/dwc/pcie-designware.h
++++ b/drivers/pci/controller/dwc/pcie-designware.h
+@@ -435,6 +435,8 @@ struct dw_pcie_ops {
+ 	enum dw_pcie_ltssm (*get_ltssm)(struct dw_pcie *pcie);
+ 	int	(*start_link)(struct dw_pcie *pcie);
+ 	void	(*stop_link)(struct dw_pcie *pcie);
++	int	(*host_start_link)(struct dw_pcie *pcie);
++	void	(*host_stop_link)(struct dw_pcie *pcie);
+ };
+ 
+ struct dw_pcie {
+@@ -664,6 +666,20 @@ static inline void dw_pcie_stop_link(struct dw_pcie *pci)
+ 		pci->ops->stop_link(pci);
+ }
+ 
++static inline int dw_pcie_host_start_link(struct dw_pcie *pci)
++{
++	if (pci->ops && pci->ops->host_start_link)
++		return pci->ops->host_start_link(pci);
++
++	return 0;
++}
++
++static inline void dw_pcie_host_stop_link(struct dw_pcie *pci)
++{
++	if (pci->ops && pci->ops->host_stop_link)
++		pci->ops->host_stop_link(pci);
++}
++
+ static inline enum dw_pcie_ltssm dw_pcie_get_ltssm(struct dw_pcie *pci)
+ {
+ 	u32 val;
+-- 
+2.34.1
+

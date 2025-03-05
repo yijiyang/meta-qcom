@@ -1,0 +1,49 @@
+From 1aebc3e693188234c689b97b1d0c01248e65b490 Mon Sep 17 00:00:00 2001
+From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Date: Tue, 25 Feb 2025 15:04:02 +0530
+Subject: [PATCH 5/8] PCI: dwc: Implement .start_link(), .stop_link() hooks
+
+Implement stop_link() and  start_link() function op for dwc drivers.
+
+Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Upstream-Status: Submitted [https://lore.kernel.org/lkml/20250225-qps615_v4_1-v4-0-e08633a7bdf8@oss.qualcomm.com/T/]
+---
+ .../pci/controller/dwc/pcie-designware-host.c  | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+index ffaded8f2df7..2d3ec61e8dfa 100644
+--- a/drivers/pci/controller/dwc/pcie-designware-host.c
++++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+@@ -697,10 +697,28 @@ void __iomem *dw_pcie_own_conf_map_bus(struct pci_bus *bus, unsigned int devfn,
+ }
+ EXPORT_SYMBOL_GPL(dw_pcie_own_conf_map_bus);
+ 
++static int dw_pcie_op_start_link(struct pci_bus *bus)
++{
++	struct dw_pcie_rp *pp = bus->sysdata;
++	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
++
++	return dw_pcie_host_start_link(pci);
++}
++
++static void dw_pcie_op_stop_link(struct pci_bus *bus)
++{
++	struct dw_pcie_rp *pp = bus->sysdata;
++	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
++
++	dw_pcie_host_stop_link(pci);
++}
++
+ static struct pci_ops dw_pcie_ops = {
+ 	.map_bus = dw_pcie_own_conf_map_bus,
+ 	.read = pci_generic_config_read,
+ 	.write = pci_generic_config_write,
++	.start_link = dw_pcie_op_start_link,
++	.stop_link = dw_pcie_op_stop_link,
+ };
+ 
+ static int dw_pcie_iatu_setup(struct dw_pcie_rp *pp)
+-- 
+2.34.1
+
