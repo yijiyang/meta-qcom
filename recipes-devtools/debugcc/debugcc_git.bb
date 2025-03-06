@@ -1,12 +1,12 @@
 SUMMARY = "A tool to debug Qualcomm clock controllers."
-HOMEPAGE = "https://github.com/andersson/debugcc/"
+HOMEPAGE = "https://github.com/linux-msm/debugcc/"
 SECTION = "devel"
 
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://debugcc.c;beginline=5;endline=29;md5=5598b6b886a3af944e4d19bb7d947095"
 
 SRC_URI = "\
-    git://github.com/andersson/debugcc.git;branch=master;protocol=https \
+    git://github.com/linux-msm/debugcc.git;branch=master;protocol=https \
 "
 
 SRCREV = "1f2d56984ec60e6ca0a18718c75c4e593542cefc"

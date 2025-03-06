@@ -1,5 +1,5 @@
 SUMMARY = "MDT to MBN conversion tool"
-HOMEPAGE = "https://github.com/andersson/pil-squasher.git"
+HOMEPAGE = "https://github.com/linux-msm/pil-squasher.git"
 SECTION = "devel"
 
 LICENSE = "BSD-3-Clause"
