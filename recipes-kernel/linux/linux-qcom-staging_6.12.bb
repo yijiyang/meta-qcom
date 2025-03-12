@@ -18,7 +18,8 @@ BBCLASSEXTEND = "devupstream:target"
 PN:class-devupstream = "linux-qcom-staging-tip"
 SRCREV:class-devupstream = "${AUTOREV}"
 
-SRCREV = "10325dc2277dc03687683b9f5f57a472b37de0b4"
+# Tag: LKP.QCLINUX.0.0-11000-kernel.0
+SRCREV = "6fad66a6870ebbd720c72551040d7b54c282299e"
 PV = "6.12+git"
 
 S = "${WORKDIR}/git"
