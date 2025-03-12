@@ -5,8 +5,18 @@ FILESEXTRAPATHS:prepend:qcom := "${THISDIR}/${PN}:"
 
 SRC_URI:append:qcom = " \
     file://qcm6490-board-dts/0001-FROMLIST-arm64-dts-qcom-qcm6490-idp-Update-protected.patch \
+    file://qcm6490-board-dts/0001-dt-bindings-PCI-qcom-pcie-sc7280-Add-global-interrup.patch \
+    file://qcm6490-board-dts/0002-arm64-dts-qcom-sc7280-Add-global-PCIe-interrupt.patch \
+    file://qcm6490-board-dts/0001-dt-bindings-PCI-Add-binding-for-Toshiba-TC956x-PCIe-.patch \
+    file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-Add-TC956x-PCIe-switc.patch \
     file://workarounds/0001-QCLINUX-arm64-dts-qcom-qcm6490-disable-sdhc1-for-ufs.patch \
     file://workarounds/0001-PENDING-arm64-dts-qcom-Remove-voltage-vote-support-f.patch \
+    file://drivers/0003-PCI-Add-new-start_link-stop_link-function-ops.patch \
+    file://drivers/0004-PCI-dwc-Add-host_start_link-host_start_link-hooks-fo.patch \
+    file://drivers/0005-PCI-dwc-Implement-.start_link-.stop_link-hooks.patch \
+    file://drivers/0006-PCI-qcom-Add-support-for-host_stop_link-host_start_l.patch \
+    file://drivers/0007-PCI-PCI-Add-pcie_is_link_active-to-determine-if-the-.patch \
+    file://drivers/0008-PCI-pwrctrl-Add-power-control-driver-for-tc956x.patch \
 "
 
 # Include additional kernel configs.
