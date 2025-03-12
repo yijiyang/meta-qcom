@@ -8,3 +8,6 @@ PACKAGECONFIG_FREEDRENO = "\
 "
 
 PACKAGECONFIG:append:qcom = "${PACKAGECONFIG_FREEDRENO}"
+
+SRC_URI:append:qcom = " \
+    file://0001-freedreno-check-if-GPU-supported-in-fd_pipe_new2.patch;patch=1"
