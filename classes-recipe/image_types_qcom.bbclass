@@ -43,6 +43,19 @@ create_qcomflash_pkg() {
         done
     fi
 
+    # Legacy boot images
+    if [ -n "${QCOM_DTB_DEFAULT}" ]; then
+        [ -e "${DEPLOY_DIR_IMAGE}/boot-initramfs-${QCOM_DTB_DEFAULT}-${MACHINE}.img" -a \
+            ! -e "boot.img" ] && \
+            install -m 0644 "${DEPLOY_DIR_IMAGE}/boot-initramfs-${QCOM_DTB_DEFAULT}-${MACHINE}.img" boot.img
+        [ -e "${DEPLOY_DIR_IMAGE}/boot-${QCOM_DTB_DEFAULT}-${MACHINE}.img" -a \
+            ! -e "boot.img" ] && \
+            install -m 0644 "${DEPLOY_DIR_IMAGE}/boot-${QCOM_DTB_DEFAULT}-${MACHINE}.img" boot.img
+    fi
+    [ -e "${DEPLOY_DIR_IMAGE}/boot-${MACHINE}.img" -a \
+        ! -e "boot.img" ] && \
+        install -m 0644 "${DEPLOY_DIR_IMAGE}/boot-${MACHINE}.img" boot.img
+
     # rootfs image
     install -m 0644 ${IMGDEPLOYDIR}/${IMAGE_LINK_NAME}.${IMAGE_QCOMFLASH_FS_TYPE} ${QCOM_ROOTFS_FILE}
 
