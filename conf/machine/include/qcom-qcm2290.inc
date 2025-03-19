@@ -10,6 +10,7 @@ KERNEL_CMDLINE_EXTRA ?= "earlycon clk_ignore_unused pd_ignore_unused"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += " \
     packagegroup-qcom-boot-essential \
+    packagegroup-machine-essential-qcom-qcm2290-soc \
 "
 
 MACHINE_EXTRA_RRECOMMENDS += " \
