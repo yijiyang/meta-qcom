@@ -88,6 +88,7 @@ jobs:
         machine:
           - qcm6490-idp
           - qcs6490-rb3gen2-core-kit
+          - qcs9075-iq-9075-evk
           - qcs9100-ride-sx
           - qrb2210-rb1-core-kit
           - qcom-armv8a
