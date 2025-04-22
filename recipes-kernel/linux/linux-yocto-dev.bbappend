@@ -39,6 +39,10 @@ SRC_URI:append:qcom = " \
     file://qrb2210-board-dts/0004-arm64-dts-qcom-qcm2290-fix-some-of-QUP-interconnects.patch \
     file://qrb2210-board-dts/0005-arm64-dts-qcom-qcm2290-add-UART3-device.patch \
     file://qrb2210-board-dts/0006-arm64-dts-qcom-qrb2210-rb1-add-Bluetooth-support.patch \
+    file://qcs9075-board-dts/0001-dt-bindings-arm-qcom-Document-rb8-ride-ride-r3-on-QC.patch \
+    file://qcs9075-board-dts/0002-arm64-dts-qcom-Add-support-for-QCS9075-RB8.patch \
+    file://qcs9075-board-dts/0003-arm64-dts-qcom-Add-support-for-QCS9075-Ride-Ride-r3.patch \
+    file://qcs9075-board-dts/0004-arm64-dts-qcom-Enable-cpu-cooling-devices-for-QCS907.patch \
 "
 
 # Include additional kernel configs.
