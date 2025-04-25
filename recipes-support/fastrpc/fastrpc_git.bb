@@ -58,4 +58,4 @@ FILES:${PN} += " \
 FILES:${PN}-dev:remove = "${FILES_SOLIBSDEV}"
 
 # We need to include lib*dsprpc.so into fastrpc for compatibility with Hexagon SDK
-ERROR_QA:remove = "dev-so"
+INSANE_SKIP:${PN} = "dev-so"
