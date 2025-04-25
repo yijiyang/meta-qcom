@@ -12,8 +12,7 @@ SRC_URI = "\
     file://adsprpcd.service \
     file://cdsprpcd.service \
     file://sdsprpcd.service \
-    file://usr-lib-rfsa.service \
-    file://mount-dsp.sh \
+    file://guess-dsp.sh \
 "
 
 PV = "0.0+"
@@ -27,8 +26,6 @@ RRECOMMENDS:${PN} += "${PN}-systemd"
 
 SYSTEMD_PACKAGES = "${PN} ${PN}-systemd"
 
-SYSTEMD_SERVICE:${PN} = "usr-lib-rfsa.service"
-
 SYSTEMD_SERVICE:${PN}-systemd = "adsprpcd.service cdsprpcd.service sdsprpcd.service"
 SYSTEMD_AUTO_ENABLE:${PN}-systemd = "disable"
 
@@ -36,13 +33,14 @@ do_install:append() {
     install -d ${D}${libdir}/rfsa
 
     install -d ${D}${systemd_unitdir}/system
-    install -m 0644 ${UNPACKDIR}/usr-lib-rfsa.service ${D}${systemd_unitdir}/system
     install -m 0644 ${UNPACKDIR}/adsprpcd.service ${D}${systemd_unitdir}/system
     install -m 0644 ${UNPACKDIR}/cdsprpcd.service ${D}${systemd_unitdir}/system
     install -m 0644 ${UNPACKDIR}/sdsprpcd.service ${D}${systemd_unitdir}/system
 
     install -d ${D}${sbindir}
-    install -m 0755 ${UNPACKDIR}/mount-dsp.sh ${D}${sbindir}
+    install -m 0755 ${UNPACKDIR}/guess-dsp.sh ${D}${sbindir}
+
+    install -d ${D}${datadir}/qcom/
 }
 
 FILES:${PN} += " \
@@ -53,6 +51,7 @@ FILES:${PN} += " \
     ${libdir}/libadsprpc.so \
     ${libdir}/libcdsprpc.so \
     ${libdir}/libsdsprpc.so \
+    ${datadir}/qcom/ \
 "
 
 FILES:${PN}-dev:remove = "${FILES_SOLIBSDEV}"

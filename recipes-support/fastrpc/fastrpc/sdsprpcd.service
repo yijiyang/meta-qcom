@@ -3,7 +3,7 @@ Description=sDSP RPC daemon
 
 [Service]
 Type=exec
-ExecStart=/usr/bin/sdsprpcd
+ExecStart=/bin/sh -c 'source /usr/sbin/guess-dsp.sh && /usr/bin/sdsprpcd'
 
 [Install]
 WantedBy=multi-user.target
