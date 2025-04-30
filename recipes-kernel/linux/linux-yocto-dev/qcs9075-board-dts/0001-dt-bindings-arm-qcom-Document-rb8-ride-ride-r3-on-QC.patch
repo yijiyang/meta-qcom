@@ -1,0 +1,46 @@
+From 415007a7650dd67c2a9ac55ae716605a4858b97c Mon Sep 17 00:00:00 2001
+From: Wasim Nazir <quic_wasimn@quicinc.com>
+Date: Sun, 29 Dec 2024 20:53:29 +0530
+Subject: [PATCH 1/4] dt-bindings: arm: qcom: Document rb8/ride/ride-r3 on
+ QCS9075
+
+qcs9075 rb8, ride & ride-r3 boards are based on QCS9075 SoC.
+
+QCS9075 is compatible IoT-industrial grade variant of SA8775p SoC.
+Unlike QCS9100, it doesn't have safety monitoring feature of
+Safety-Island(SAIL) subsystem, which affects thermal management.
+
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Wasim Nazir <quic_wasimn@quicinc.com>
+Upstream-Status: Submitted [https://lore.kernel.org/all/20241229152332.3068172-4-quic_wasimn@quicinc.com/]
+---
+ Documentation/devicetree/bindings/arm/qcom.yaml | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
+index 618a87693ac1..4e911cda97fb 100644
+--- a/Documentation/devicetree/bindings/arm/qcom.yaml
++++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+@@ -58,6 +58,7 @@ description: |
+         qcs8550
+         qcm2290
+         qcm6490
++        qcs9075
+         qcs9100
+         qdu1000
+         qrb2210
+@@ -960,6 +961,14 @@ properties:
+               - qcom,sa8775p-ride-r3
+           - const: qcom,sa8775p
+ 
++      - items:
++          - enum:
++              - qcom,qcs9075-rb8
++              - qcom,qcs9075-ride
++              - qcom,qcs9075-ride-r3
++          - const: qcom,qcs9075
++          - const: qcom,sa8775p
++
+       - items:
+           - enum:
+               - qcom,qcs9100-ride
