@@ -8,7 +8,7 @@ QCOM_VFAT_SECTOR_SIZE = "512"
 
 require conf/machine/include/arm/armv8a/tune-cortexa53.inc
 
-KERNEL_CMDLINE_EXTRA ?= "earlycon clk_ignore_unused pd_ignore_unused"
+KERNEL_CMDLINE_EXTRA ?= "clk_ignore_unused pd_ignore_unused"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += " \
     packagegroup-qcom-boot-essential \
