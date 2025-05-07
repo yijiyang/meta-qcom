@@ -5,6 +5,7 @@
 from multiprocessing import Pool
 import os
 import sys
+from time import sleep
 from typing import List
 
 import requests
@@ -19,17 +20,45 @@ def upload_file(args):
         headers = {
             "Authentication": f"Bearer {gh_token}",
         }
-        r = requests.put(url, headers=headers, allow_redirects=False)
-        if not r.ok:
-            return name, f"Unable to get signed url HTTP_{r.status_code} - {r.text}"
+
+        # Fibonacci backoff
+        for x in (1, 2, 3, 5, 0):
+            r = requests.put(url, headers=headers, allow_redirects=False)
+            if not r.ok:
+                if not x:
+                    return (
+                        name,
+                        f"Unable to get signed url HTTP_{r.status_code} - {r.text}",
+                    )
+                else:
+                    print(
+                        f"Error getting signed URL for {name}: {r.status_code} - {r.text}",
+                        flush=True,
+                    )
+                    print(f"Retrying in {x} seconds")
+                    sleep(x)
 
         url = r.headers["location"]
         path = os.path.join(base, name)
-        r = requests.put(
-            url, data=open(path, "rb"), headers={"Content-type": "application/octet-stream"}
-        )
-        if not r.ok:
-            return name, f"Unable to upload content HTTP_{r.status_code} - {r.text}"
+        # Fibonacci backoff
+        for x in (1, 2, 3, 0):
+            r = requests.put(
+                url,
+                data=open(path, "rb"),
+                headers={"Content-type": "application/octet-stream"},
+            )
+            if not r.ok:
+                if not x:
+                    return (
+                        name,
+                        f"Unable to upload content HTTP_{r.status_code} - {r.text}",
+                    )
+                else:
+                    print(
+                        f"Unable to upload content for {name}: HTTP_{r.status_code} - {r.text}"
+                    )
+                    print(f"Retrying in {x} seconds")
+                    sleep(x)
 
         return name, None
     except Exception as e:
