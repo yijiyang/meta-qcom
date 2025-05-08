@@ -12,7 +12,7 @@ inherit image uki uki-esp-image
 
 UKI_FILENAME = "${EFI_LINUX_IMG}"
 
-UKI_CMDLINE = "root=${QCOM_BOOTIMG_ROOTFS} rw rootwait"
+UKI_CMDLINE = "root=${QCOM_BOOTIMG_ROOTFS} rw rootwait console=${KERNEL_CONSOLE}"
 
 # Remove 'upstream' dtb, rely on EFI provided one
 KERNEL_DEVICETREE = ""
