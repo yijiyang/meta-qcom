@@ -16,4 +16,4 @@ do_ukiesp() {
 	install -m 0755 ${DEPLOY_DIR_IMAGE}/${UKI_FILENAME} ${IMAGE_ROOTFS}${ESPFOLDER}/EFI/Linux
 }
 
-addtask ukiesp after do_deploy uki before do_image_complete do_image_wic
+addtask ukiesp after do_rootfs uki before do_image
