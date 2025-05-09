@@ -12,7 +12,8 @@ inherit image uki uki-esp-image
 
 UKI_FILENAME = "${EFI_LINUX_IMG}"
 
-UKI_CMDLINE = "root=${QCOM_BOOTIMG_ROOTFS} rw rootwait"
+UKI_CMDLINE = "root=${QCOM_BOOTIMG_ROOTFS} rw rootwait console=${KERNEL_CONSOLE}"
+UKI_CMDLINE += "${@d.getVar('KERNEL_CMDLINE_EXTRA') or ''}"
 
 # Remove 'upstream' dtb, rely on EFI provided one
 KERNEL_DEVICETREE = ""
@@ -34,3 +35,5 @@ remove_unused_files() {
     find ${IMAGE_ROOTFS} -mindepth 1 ! -path "${IMAGE_ROOTFS}/EFI*" -exec rm -rf {} +
 }
 IMAGE_PREPROCESS_COMMAND:append = " remove_unused_files"
+
+do_uki[vardeps] += "KERNEL_CMDLINE_EXTRA"
