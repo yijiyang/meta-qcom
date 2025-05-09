@@ -11,9 +11,7 @@ SRC_URI:append:qcom = " \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-Add-TC956x-PCIe-switc.patch \
     file://qcm6490-board-dts/0001-arm64-dts-qcom-sc7280-Add-support-for-camss.patch \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-vision-mezzanine-Add-.patch \
-    file://qcm6490-board-dts/0002-media-dt-bindings-update-clocks-for-sc7280-camss.patch \
     file://qcm6490-board-dts/0001-PENDING-enable-xHCI.patch \
-    file://qcm6490-board-dts/0001-dt-bindings-clock-qcom-Add-compatible-for.patch \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-qcm6490-idp-Update-the-LPASS.patch \
     file://qcm6490-board-dts/0003-arm64-dts-qcom-qcs6490-rb3gen2-Update-the-LPASS-audi.patch \
     file://qcm6490-board-dts/0001-arm64-dts-qcom-sc7280-Add-gpr-node.patch \
@@ -30,11 +28,6 @@ SRC_URI:append:qcom = " \
     file://drivers/0006-PCI-qcom-Add-support-for-host_stop_link-host_start_l.patch \
     file://drivers/0007-PCI-PCI-Add-pcie_is_link_active-to-determine-if-the-.patch \
     file://drivers/0008-PCI-pwrctrl-Add-power-control-driver-for-tc956x.patch \
-    file://drivers/0001-media-qcom-camss-update-clock-names-for-sc7280.patch \
-    file://drivers/0004-clk-qcom-lpassaudiocc-sc7280-Add-support-for-LPASS-r.patch \
-    file://drivers/0001-dt-bindings-net-bluetooth-qualcomm-document-WCN3950.patch \
-    file://drivers/0002-Bluetooth-qca-simplify-WCN399x-NVM-loading.patch \
-    file://drivers/0003-Bluetooth-qca-add-WCN3950-support.patch \
     file://drivers/0001-Bluetooth-qca-fix-NV-variant-for-one-of-WCN3950-SoCs.patch \
     file://qrb2210-board-dts/0004-arm64-dts-qcom-qcm2290-fix-some-of-QUP-interconnects.patch \
     file://qrb2210-board-dts/0005-arm64-dts-qcom-qcm2290-add-UART3-device.patch \

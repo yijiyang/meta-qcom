@@ -13,7 +13,6 @@ SRC_URI:append:qcom = " \
     file://workarounds/0002-PENDING-arm64-dts-qcs6490-rb3-Remove-voltage-voting-.patch \
     file://generic-drivers/0001-Bluetooth-qca-Expand-firmware-name-to-load-specific-.patch \
     file://generic-drivers/0001-dt-bindings-net-bluetooth-qualcomm-document-WCN3950.patch \
-    file://generic-drivers/0002-Bluetooth-qca-simplify-WCN399x-NVM-loading.patch \
     file://generic-drivers/0003-Bluetooth-qca-add-WCN3950-support.patch \
     file://generic-drivers/0001-Bluetooth-qca-fix-NV-variant-for-one-of-WCN3950-SoCs.patch \
     file://qrb2210-board-dts/0004-arm64-dts-qcom-qcm2290-fix-some-of-QUP-interconnects.patch \
