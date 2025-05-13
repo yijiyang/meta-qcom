@@ -100,6 +100,12 @@ create_qcomflash_pkg() {
         install -m 0644 ${bfw} .
     done
 
+    # sail nor firmware
+    if [ -d "${DEPLOY_DIR_IMAGE}/${QCOM_BOOT_FILES_SUBDIR}/sail_nor" ]; then
+        install -d sail_nor
+        find "${DEPLOY_DIR_IMAGE}/${QCOM_BOOT_FILES_SUBDIR}/sail_nor" -maxdepth 1 -type f -exec install -m 0644 {} sail_nor \;
+    fi
+
     # Create symlink to ${QCOMFLASH_DIR} dir
     ln -rsf ${QCOMFLASH_DIR} ${IMGDEPLOYDIR}/${IMAGE_LINK_NAME}.qcomflash
 
