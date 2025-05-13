@@ -28,7 +28,6 @@ SRC_URI:append:qcom = " \
     file://drivers/0006-PCI-qcom-Add-support-for-host_stop_link-host_start_l.patch \
     file://drivers/0007-PCI-PCI-Add-pcie_is_link_active-to-determine-if-the-.patch \
     file://drivers/0008-PCI-pwrctrl-Add-power-control-driver-for-tc956x.patch \
-    file://drivers/0001-Bluetooth-qca-fix-NV-variant-for-one-of-WCN3950-SoCs.patch \
     file://qrb2210-board-dts/0004-arm64-dts-qcom-qcm2290-fix-some-of-QUP-interconnects.patch \
     file://qrb2210-board-dts/0005-arm64-dts-qcom-qcm2290-add-UART3-device.patch \
     file://qrb2210-board-dts/0006-arm64-dts-qcom-qrb2210-rb1-add-Bluetooth-support.patch \
@@ -37,7 +36,6 @@ SRC_URI:append:qcom = " \
     file://qcs9075-board-dts/0003-arm64-dts-qcom-Add-support-for-QCS9075-Ride-Ride-r3.patch \
     file://qcs9075-board-dts/0004-arm64-dts-qcom-Enable-cpu-cooling-devices-for-QCS907.patch \
     file://qcs9075-board-dts/0001-arm64-dts-qcom-qcs9075-rb8-enable-UFS.patch \
-    file://workarounds/0001-iommu-Fix-crash-in-report_iommu_fault.patch \
 "
 
 # Include additional kernel configs.
