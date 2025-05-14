@@ -1,8 +1,7 @@
-DESCRIPTION = "Tiny ramdisk image with RB1/RB2 devices firmware files"
+DESCRIPTION = "Tiny ramdisk image with RB1 devices firmware files"
 
 PACKAGE_INSTALL += " \
     packagegroup-rb1-firmware \
-    packagegroup-rb2-firmware \
 "
 
 BAD_RECOMMENDATIONS = " \
