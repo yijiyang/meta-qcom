@@ -7,6 +7,7 @@ PACKAGES = " \
     ${PN}-qcom-generic \
     ${PN}-qcom-qcm2290-soc \
     ${PN}-qcom-qcs6490-soc \
+    ${PN}-qcom-qcs8300-soc \
     ${PN}-qcom-qcs9100-soc \
 "
 
@@ -88,6 +89,18 @@ RRECOMMENDS:${PN}-qcom-qcs6490-soc += " \
     kernel-module-pmic-glink-altmode \
     kernel-module-pwrseq-qcom-wcn \
     kernel-module-videocc-sc7280 \
+"
+
+RRECOMMENDS:${PN}-qcom-qcs8300-soc += " \
+    ${PN}-board-generic \
+    ${PN}-qcom-generic \
+    kernel-module-ath11k-pci \
+    kernel-module-camcc-sa8775p \
+    kernel-module-dispcc0-sa8775p \
+    kernel-module-dispcc1-sa8775p \
+    kernel-module-gpucc-sa8775p \
+    kernel-module-pwrseq-qcom-wcn \
+    kernel-module-videocc-sa8775p \
 "
 
 RRECOMMENDS:${PN}-qcom-qcs9100-soc += " \
