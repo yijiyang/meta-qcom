@@ -115,6 +115,10 @@ jobs:
           kas build ci/mirror.yml:ci/${{ matrix.machine }}.yml
           ci/yocto-pybootchartgui.sh && mv $KAS_WORK_DIR/build/buildchart.svg .
 
+          if [ "${{ matrix.machine }}" = "qcom-arm8a" ]; then
+            kas build ci/mirror.yml:ci/${{ matrix.machine }}.yml:initramfs-test.yml
+          fi
+
       - uses: actions/upload-artifact@v4
         with:
           name: buildchart-${{ matrix.machine }}
