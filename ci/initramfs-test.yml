@@ -6,7 +6,6 @@ header:
 target:
   - initramfs-test-image
   - initramfs-test-full-image
-  - initramfs-firmware-image
   - initramfs-firmware-rb3gen2-image
   - initramfs-firmware-qcs8300-ride-image
   - initramfs-firmware-sa8775p-ride-image
