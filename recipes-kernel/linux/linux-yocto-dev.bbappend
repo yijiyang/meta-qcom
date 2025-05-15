@@ -22,6 +22,9 @@ SRC_URI:append:qcom = " \
     file://qcm6490-board-dts/0001-dts-rb3gen2-soundwire-checkin.patch \
     file://workarounds/0001-QCLINUX-arm64-dts-qcom-qcm6490-disable-sdhc1-for-ufs.patch \
     file://workarounds/0001-PENDING-arm64-dts-qcom-Remove-voltage-vote-support-f.patch \
+    file://workarounds/0001-scsi-ufs-qcom-Check-gear-against-max-gear-in-vop-fre.patch \
+    file://workarounds/0002-scsi-ufs-qcom-Map-devfreq-OPP-freq-to-UniPro-Core-Cl.patch \
+    file://workarounds/0003-scsi-ufs-qcom-Call-ufs_qcom_cfg_timers-in-clock-scal.patch \
     file://drivers/0003-PCI-Add-new-start_link-stop_link-function-ops.patch \
     file://drivers/0004-PCI-dwc-Add-host_start_link-host_start_link-hooks-fo.patch \
     file://drivers/0005-PCI-dwc-Implement-.start_link-.stop_link-hooks.patch \
