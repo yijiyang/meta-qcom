@@ -1,56 +1,53 @@
-From f2e8c9c844b1d3c0365e1a34d6b54ccd665aca0e Mon Sep 17 00:00:00 2001
+From 7c935df97c299b7aded18bc8a3e4c7007bfe4803 Mon Sep 17 00:00:00 2001
 From: Wasim Nazir <quic_wasimn@quicinc.com>
-Date: Sun, 29 Dec 2024 20:53:30 +0530
-Subject: [PATCH 2/4] arm64: dts: qcom: Add support for QCS9075 RB8
+Date: Tue, 29 Apr 2025 11:19:04 +0530
+Subject: [PATCH 4/4] arm64: dts: qcom: Add support for qcs9075 IQ-9075-EVK
 
-Add initial device tree support for the RB8 board
-based on Qualcomm's QCS9075 SoC.
+Add initial device tree support for IQ-9075-EVK board,
+based on Qualcomm's QCS9075M SOM. QCS9075M SOM is based on QCS9075 SOC.
 
 Basic changes are supported for boot to shell.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 Signed-off-by: Wasim Nazir <quic_wasimn@quicinc.com>
-Upstream-Status: Submitted [https://lore.kernel.org/all/20241229152332.3068172-5-quic_wasimn@quicinc.com/]
+Upstream-Status: Submitted [https://lore.kernel.org/all/20250429054906.113317-5-quic_wasimn@quicinc.com/]
 ---
- arch/arm64/boot/dts/qcom/Makefile        |   1 +
- arch/arm64/boot/dts/qcom/qcs9075-rb8.dts | 281 +++++++++++++++++++++++
- 2 files changed, 282 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/qcs9075-rb8.dts
+ arch/arm64/boot/dts/qcom/Makefile             |   1 +
+ .../boot/dts/qcom/qcs9075-iq-9075-evk.dts     | 268 ++++++++++++++++++
+ 2 files changed, 269 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/qcom/qcs9075-iq-9075-evk.dts
 
 diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 213d941b1b79..0005eaa7df4a 100644
+index 213d941b1b79..17a5420795bf 100644
 --- a/arch/arm64/boot/dts/qcom/Makefile
 +++ b/arch/arm64/boot/dts/qcom/Makefile
 @@ -122,6 +122,7 @@ qcs6490-rb3gen2-vision-mezzanine-dtbs := qcs6490-rb3gen2.dtb qcs6490-rb3gen2-vis
  dtb-$(CONFIG_ARCH_QCOM)	+= qcs6490-rb3gen2-vision-mezzanine.dtb
  dtb-$(CONFIG_ARCH_QCOM)	+= qcs8300-ride.dtb
  dtb-$(CONFIG_ARCH_QCOM)	+= qcs8550-aim300-aiot.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= qcs9075-rb8.dtb
++dtb-$(CONFIG_ARCH_QCOM)	+= qcs9075-iq-9075-evk.dtb
  dtb-$(CONFIG_ARCH_QCOM)	+= qcs9100-ride.dtb
  dtb-$(CONFIG_ARCH_QCOM)	+= qcs9100-ride-r3.dtb
  dtb-$(CONFIG_ARCH_QCOM)	+= qdu1000-idp.dtb
-diff --git a/arch/arm64/boot/dts/qcom/qcs9075-rb8.dts b/arch/arm64/boot/dts/qcom/qcs9075-rb8.dts
+diff --git a/arch/arm64/boot/dts/qcom/qcs9075-iq-9075-evk.dts b/arch/arm64/boot/dts/qcom/qcs9075-iq-9075-evk.dts
 new file mode 100644
-index 000000000000..ecaa383b6508
+index 000000000000..eadc59739a4b
 --- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/qcs9075-rb8.dts
-@@ -0,0 +1,281 @@
++++ b/arch/arm64/boot/dts/qcom/qcs9075-iq-9075-evk.dts
+@@ -0,0 +1,268 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
-+ * Copyright (c) 2024, Qualcomm Innovation Center, Inc. All rights reserved.
++ * Copyright (c) 2024-2025, Qualcomm Innovation Center, Inc. All rights reserved.
 + */
 +/dts-v1/;
 +
 +#include <dt-bindings/gpio/gpio.h>
 +#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
 +
-+#include "sa8775p.dtsi"
-+#include "sa8775p-pmics.dtsi"
++#include "qcs9075-som.dtsi"
 +
 +/ {
-+	model = "Qualcomm Technologies, Inc. Robotics RB8";
-+	compatible = "qcom,qcs9075-rb8", "qcom,qcs9075", "qcom,sa8775p";
++	model = "Qualcomm Technologies, Inc. IQ 9075 EVK";
++	compatible = "qcom,qcs9075-iq-9075-evk", "qcom,qcs9075-som", "qcom,qcs9075", "qcom,sa8775p";
 +
 +	aliases {
 +		serial0 = &uart10;
@@ -180,18 +177,6 @@ index 000000000000..ecaa383b6508
 +			regulator-allow-set-load;
 +			regulator-allowed-modes = <RPMH_REGULATOR_MODE_LPM
 +						   RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l4c: ldo4 {
-+			regulator-name = "vreg_l4c";
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			/*
-+			 * FIXME: This should have regulator-allow-set-load but
-+			 * we're getting an over-current fault from the PMIC
-+			 * when switching to LPM.
-+			 */
 +		};
 +
 +		vreg_l5c: ldo5 {
