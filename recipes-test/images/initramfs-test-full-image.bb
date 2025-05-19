@@ -11,6 +11,8 @@ PACKAGE_INSTALL += " \
     ncurses \
     ncurses-terminfo \
     ncurses-terminfo-base \
+    net-tools \
+    rng-tools \
     stress-ng \
     util-linux \
     util-linux-chrt \
