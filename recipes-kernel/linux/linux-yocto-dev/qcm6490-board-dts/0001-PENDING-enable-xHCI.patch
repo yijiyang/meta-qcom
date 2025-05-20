@@ -1,4 +1,4 @@
-From 6364f1eef332977bec795bd5237c8b1aa33bb88b Mon Sep 17 00:00:00 2001
+From c022d7bd52229b31383bc5d48ab211243cc00d1c Mon Sep 17 00:00:00 2001
 From: Jorge Ramirez-Ortiz <jorge.ramirez@oss.qualcomm.com>
 Date: Wed, 5 Mar 2025 11:11:22 +0100
 Subject: [PATCH] dts: rb3gen2: enable Renesas xHCI
@@ -10,13 +10,14 @@ Ported  to 6.14 from an original patch by Bjorn Andersson.
 
 Link: https://github.com/quic-bjorande/linux/commit/ef0d4badf252c10883a369e8fb217799868158b0
 Signed-off-by: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+Signed-off-by: Ricardo Salveti <ricardo.salveti@oss.qualcomm.com>
 Upstream-Status: Pending
 ---
- arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts | 76 ++++++++++++++++++++
- 1 file changed, 76 insertions(+)
+ arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts | 65 +++++++++++++++++++-
+ 1 file changed, 64 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts b/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts
-index 13dbb24a3179..73959e5095bf 100644
+index 17d29b922ee95b..e3042f05f9223f 100644
 --- a/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts
 +++ b/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts
 @@ -243,6 +243,31 @@ vdd_ntn_1p8: regulator-vdd-ntn-1p8 {
@@ -51,17 +52,16 @@ index 13dbb24a3179..73959e5095bf 100644
  };
  
  &apps_rsc {
-@@ -780,6 +805,9 @@ pcie@0,0 {
+@@ -782,7 +807,7 @@ pcie@0,0 {
  
- 		i2c-parent = <&i2c0 0x77>;
- 
-+		pinctrl-0 = <&tc956x_rst_state>, <&upd_hub_rst_state>, <&usb_hub_rst_state>;
-+		pinctrl-names = "default";
-+
  		reset-gpios = <&pm8350c_gpios 1 GPIO_ACTIVE_LOW>;
  
+-		pinctrl-0 = <&tc9563_rsex_n>;
++		pinctrl-0 = <&tc9563_rsex_n>, <&upd_hub_rst_state>, <&usb_hub_rst_state>;
+ 		pinctrl-names = "default";
+ 
  		pcie@1,0 {
-@@ -953,6 +981,27 @@ ntn_1p8_en: ntn-1p8-en-state {
+@@ -966,6 +991,17 @@ tc9563_rsex_n: tc9563-resx-state {
  		output-enable;
  		power-source = <0>;
  	};
@@ -76,20 +76,10 @@ index 13dbb24a3179..73959e5095bf 100644
 +		output-high;
 +		power-source = <0>;
 +	};
-+
-+	tc956x_rst_state: tc956x-rst-state {
-+		pins = "gpio1";
-+		function = "normal";
-+
-+		bias-disable;
-+		input-disable;
-+		output-enable;
-+		power-source = <0>;
-+	};
  };
  
  &tlmm {
-@@ -1048,6 +1097,24 @@ &edp_hot_plug_det {
+@@ -1061,6 +1097,24 @@ &edp_hot_plug_det {
  };
  
  &pm7250b_gpios {
@@ -114,7 +104,7 @@ index 13dbb24a3179..73959e5095bf 100644
  	lt9611_rst_pin: lt9611-rst-state {
  		pins = "gpio2";
  		function = "normal";
-@@ -1101,4 +1168,13 @@ sd_cd: sd-cd-state {
+@@ -1114,4 +1168,13 @@ sd_cd: sd-cd-state {
  		function = "gpio";
  		bias-pull-up;
  	};
@@ -129,5 +119,5 @@ index 13dbb24a3179..73959e5095bf 100644
 +       };
  };
 -- 
-2.34.1
+2.49.0
 

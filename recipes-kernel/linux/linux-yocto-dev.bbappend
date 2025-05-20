@@ -7,8 +7,8 @@ SRC_URI:append:qcom = " \
     file://qcm6490-board-dts/0001-FROMLIST-arm64-dts-qcom-qcm6490-idp-Update-protected.patch \
     file://qcm6490-board-dts/0001-dt-bindings-PCI-qcom-pcie-sc7280-Add-global-interrup.patch \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-sc7280-Add-global-PCIe-interrupt.patch \
-    file://qcm6490-board-dts/0001-dt-bindings-PCI-Add-binding-for-Toshiba-TC956x-PCIe-.patch \
-    file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-Add-TC956x-PCIe-switc.patch \
+    file://qcm6490-board-dts/0001-dt-bindings-PCI-Add-binding-for-Toshiba-TC9563-PCIe-.patch \
+    file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-Add-TC9563-PCIe-switc.patch \
     file://qcm6490-board-dts/0001-arm64-dts-qcom-sc7280-Add-support-for-camss.patch \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-vision-mezzanine-Add-.patch \
     file://qcm6490-board-dts/0001-PENDING-enable-xHCI.patch \
@@ -29,8 +29,8 @@ SRC_URI:append:qcom = " \
     file://drivers/0004-PCI-dwc-Add-host_start_link-host_start_link-hooks-fo.patch \
     file://drivers/0005-PCI-dwc-Implement-.start_link-.stop_link-hooks.patch \
     file://drivers/0006-PCI-qcom-Add-support-for-host_stop_link-host_start_l.patch \
-    file://drivers/0007-PCI-PCI-Add-pcie_is_link_active-to-determine-if-the-.patch \
-    file://drivers/0008-PCI-pwrctrl-Add-power-control-driver-for-tc956x.patch \
+    file://drivers/0007-PCI-PCI-Add-pcie_link_is_active-to-determine-if-the-.patch \
+    file://drivers/0008-PCI-pwrctrl-Add-power-control-driver-for-tc9563.patch \
     file://qrb2210-board-dts/0004-arm64-dts-qcom-qcm2290-fix-some-of-QUP-interconnects.patch \
     file://qrb2210-board-dts/0005-arm64-dts-qcom-qcm2290-add-UART3-device.patch \
     file://qrb2210-board-dts/0006-arm64-dts-qcom-qrb2210-rb1-add-Bluetooth-support.patch \
