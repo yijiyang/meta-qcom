@@ -3,9 +3,16 @@
 header:
   version: 14
 
-distro: qcom-wayland
+distro: qcom-distro
 
 repos:
   meta-qcom-distro:
     url: https://github.com/qualcomm-linux/meta-qcom-distro
     branch: main
+
+  meta-openembedded:
+    url: https://github.com/openembedded/meta-openembedded
+    layers:
+      meta-oe:
+      meta-networking:
+      meta-python:
