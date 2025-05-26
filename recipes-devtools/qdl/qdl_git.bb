@@ -1,4 +1,6 @@
-SUMMARY = "QDL flasing tool"
+SUMMARY = "Qualcomm DownLoader flashing tool"
+DESCRIPTION = "Communicate with Qualcomm SoCs to upload new software or \
+dump memory"
 HOMEPAGE = "https://github.com/linux-msm/qdl.git"
 SECTION = "devel"
 
