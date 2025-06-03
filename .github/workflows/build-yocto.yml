@@ -135,8 +135,8 @@ jobs:
           uploads_dir=./uploads
           mkdir $uploads_dir
           find $deploy_dir/ -maxdepth 1 -name "*.rootfs*.qcomflash" -exec rm -rf {} \;
+          cp buildchart.svg kas-build.yml $deploy_dir/
           mv $deploy_dir $uploads_dir/
-          cp buildchart.svg kas-build.yml $uploads_dir/
 
       - name: Upload private artifacts
         uses: qualcomm-linux/upload-private-artifact-action@v1
