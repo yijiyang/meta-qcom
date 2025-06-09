@@ -5,6 +5,7 @@ DESCRIPTION = "Relatively larger ramdisk image for running tests (bootrr, etc)"
 PACKAGE_INSTALL += " \
     bootrr \
     coreutils \
+    expect \
     hdparm \
     kexec \
     lsof \
