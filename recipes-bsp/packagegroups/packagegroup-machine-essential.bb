@@ -17,6 +17,7 @@ PACKAGES = " \
 # This packagegroup lists non-qcom specific modules that are needed,
 # like hdmi and gpio support
 RRECOMMENDS:${PN}-board-generic += " \
+    kernel-module-ax88179-178a \
     kernel-module-cdc-ncm \
     kernel-module-display-connector \
     kernel-module-i2c-gpio \
