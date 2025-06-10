@@ -106,6 +106,7 @@ RRECOMMENDS:${PN}-qcom-qcs6490-soc += " \
     kernel-module-pmic-glink \
     kernel-module-pmic-glink-altmode \
     kernel-module-pwrseq-qcom-wcn \
+    kernel-module-snd-soc-wsa883x \
     kernel-module-videocc-sc7280 \
 "
 
