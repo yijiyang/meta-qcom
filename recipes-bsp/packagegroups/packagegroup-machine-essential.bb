@@ -35,15 +35,22 @@ RRECOMMENDS:${PN}-qcom-generic += " \
     kernel-module-gpi \
     kernel-module-i2c-qcom-geni \
     kernel-module-icc-bwmon \
+    kernel-module-icc-osm-l3 \
     kernel-module-leds-qcom-lpg \
     kernel-module-lmh \
     kernel-module-msm \
+    kernel-module-nvmem-qcom-spmi-sdam \
     kernel-module-phy-qcom-edp \
     kernel-module-phy-qcom-qmp-combo \
     kernel-module-phy-qcom-qmp-usbc \
     kernel-module-phy-qcom-qusb2 \
     kernel-module-phy-qcom-snps-femto-v2 \
+    kernel-module-q6apm-dai \
+    kernel-module-q6apm-lpass-dais \
+    kernel-module-q6prm-clocks \
+    kernel-module-qcom-battmgr \
     kernel-module-qcom-iris \
+    kernel-module-qcom-pd-mapper \
     kernel-module-qcom-pmic-tcpm \
     kernel-module-qcom-pon \
     kernel-module-qcom-q6v5-mss \
@@ -56,14 +63,23 @@ RRECOMMENDS:${PN}-qcom-generic += " \
     kernel-module-qcom-stats \
     kernel-module-qcom-usb-vbus-regulator \
     kernel-module-qcom-wdt \
+    kernel-module-qcrypto \
     kernel-module-qrtr \
     kernel-module-qrtr-mhi \
     kernel-module-qrtr-smd \
     kernel-module-rmtfs-mem \
     kernel-module-rpmsg-ctrl \
     kernel-module-rtc-pm8xxx \
+    kernel-module-snd-q6apm \
+    kernel-module-snd-soc-lpass-rx-macro \
+    kernel-module-snd-soc-lpass-tx-macro \
+    kernel-module-snd-soc-lpass-va-macro \
+    kernel-module-snd-soc-lpass-wsa-macro \
+    kernel-module-snd-soc-sc8280xp \
     kernel-module-socinfo \
+    kernel-module-soundwire-qcom \
     kernel-module-spi-geni-qcom \
+    kernel-module-ucsi-glink \
     kernel-module-venus-dec \
     kernel-module-venus-enc \
 "
