@@ -50,23 +50,29 @@ jobs:
           DEVICE_TYPE_PATH="${FIND_PATH%/*}"
           DEVICE_TYPE="${DEVICE_TYPE_PATH#*/}"
           BUILD_DOWNLOAD_URL="${{inputs.url}}"
+          FILE_NAME=$(echo "${FIND_PATH%.yaml}" | tr "/" "-")
           sed -i "s|{{DEVICE_TYPE}}|${DEVICE_TYPE}|g" "${{ matrix.target }}"
           sed -i "s|{{GITHUB_SHA}}|${GITHUB_SHA}|g" "${{ matrix.target }}"
           sed -i "s|{{BUILD_DOWNLOAD_URL}}|${BUILD_DOWNLOAD_URL}|g" "${{ matrix.target }}"
           sed -i "s|{{GITHUB_RUN_ID}}|${GITHUB_RUN_ID}|g" "${{ matrix.target }}"
           cat "${{ matrix.target }}"
+          echo "JOB_NAME=${FILE_NAME}" >> $GITHUB_ENV
 
       - name: Submit ${{ matrix.target }}
         timeout-minutes: 20
-        uses: foundriesio/lava-action@v6
+        uses: foundriesio/lava-action@v8
+        env:
+          JOB_NAME: ${{ env.JOB_NAME }}
         with:
           lava_token: ${{ secrets.LAVATOKEN }}
           lava_url: 'lava.infra.foundries.io'
           job_definition: ${{ matrix.target }}
           wait_for_job: true
           fail_action_on_failure: false
+          fail_action_on_incomplete: false
           save_result_as_artifact: true
           save_job_details: true
+          result_file_name: "${{ env.JOB_NAME }}"
 
   publish-test-results:
     name: "Publish Tests Results"
