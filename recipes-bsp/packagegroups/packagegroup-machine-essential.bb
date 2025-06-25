@@ -25,6 +25,7 @@ RRECOMMENDS:${PN}-board-generic += " \
     kernel-module-mcp251xfd \
     kernel-module-nb7vpq904m \
     kernel-module-nvmem-reboot-mode \
+    kernel-module-pci-pwrctrl-pwrseq \
     kernel-module-pci-pwrctrl-tc9563 \
     kernel-module-snd-soc-hdmi-codec \
     kernel-module-xhci-pci-renesas \
