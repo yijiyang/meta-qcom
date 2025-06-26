@@ -100,7 +100,7 @@ jobs:
           - name: poky-altcfg
             yamlfile: ""
           - name: qcom
-            yamlfile: 'ci/distro.yml:'
+            yamlfile: ':ci/distro.yml'
     runs-on: [self-hosted, x86]
     name: ${{ matrix.machine }}/${{ matrix.distro.name }}
     steps:
@@ -121,7 +121,7 @@ jobs:
           mkdir $KAS_WORK_DIR
           ${KAS_CONTAINER} dump --resolve-env --resolve-local --resolve-refs \
               ci/mirror.yml:ci/${{ matrix.machine }}.yml > kas-build.yml
-          ${KAS_CONTAINER} build ci/mirror.yml:${{ matrix.distro.yamlfile }}ci/${{ matrix.machine }}.yml
+          ${KAS_CONTAINER} build ci/mirror.yml:ci/${{ matrix.machine }}.yml${{ matrix.distro.yamlfile }}
           ci/kas-container-shell-helper.sh ci/yocto-pybootchartgui.sh
           mv $KAS_WORK_DIR/build/buildchart.svg .
 
