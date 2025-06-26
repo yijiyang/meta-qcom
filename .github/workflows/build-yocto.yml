@@ -36,7 +36,7 @@ jobs:
 
       - name: Run kas lock
         run: |
-          ${KAS_CONTAINER} dump --update --lock --inplace ci/base.yml
+          ${KAS_CONTAINER} lock --update ci/base.yml
 
       - uses: actions/upload-artifact@v4
         with:
