@@ -8,6 +8,9 @@ IMAGE_TYPES += "qcomflash"
 QCOM_ESP_IMAGE ?= "esp-qcom-image"
 QCOM_ESP_FILE ?= "${@'efi.bin' if d.getVar('QCOM_ESP_IMAGE') else ''}"
 
+# ARMv7 machines don't use EFI / UKI
+QCOM_ESP_IMAGE:qcom-armv7a = ""
+
 # There is currently no upstream-compatible way for the firmware to
 # identify and load the correct DTB from a combined-dtb that contains all
 # dtbs defined in KERNEL_DEVICETREE, so pick the first individual image
