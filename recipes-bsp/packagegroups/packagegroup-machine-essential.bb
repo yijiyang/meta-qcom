@@ -20,11 +20,13 @@ RRECOMMENDS:${PN}-board-generic += " \
     kernel-module-ax88179-178a \
     kernel-module-cdc-ncm \
     kernel-module-display-connector \
+    kernel-module-dwmac-qcom-ethqos \
     kernel-module-i2c-gpio \
     kernel-module-lontium-lt9611uxc \
     kernel-module-mcp251xfd \
     kernel-module-nb7vpq904m \
     kernel-module-nvmem-reboot-mode \
+    kernel-module-pci-pwrctrl-pwrseq \
     kernel-module-pci-pwrctrl-tc9563 \
     kernel-module-snd-soc-hdmi-codec \
     kernel-module-xhci-pci-renesas \
@@ -120,7 +122,9 @@ RRECOMMENDS:${PN}-qcom-qcs8300-soc += " \
     kernel-module-dispcc0-sa8775p \
     kernel-module-dispcc1-sa8775p \
     kernel-module-gpucc-sa8775p \
+    kernel-module-phy-qcom-sgmii-eth \
     kernel-module-pwrseq-qcom-wcn \
+    kernel-module-stmmac-platform \
     kernel-module-videocc-sa8775p \
 "
 
@@ -132,7 +136,9 @@ RRECOMMENDS:${PN}-qcom-qcs9100-soc += " \
     kernel-module-dispcc0-sa8775p \
     kernel-module-dispcc1-sa8775p \
     kernel-module-gpucc-sa8775p \
+    kernel-module-phy-qcom-sgmii-eth \
     kernel-module-pwrseq-qcom-wcn \
+    kernel-module-stmmac-platform \
     kernel-module-videocc-sa8775p \
 "
 
