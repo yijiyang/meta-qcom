@@ -36,7 +36,7 @@ jobs:
 
       - name: Run kas lock
         run: |
-          ${KAS_CONTAINER} lock --update ci/base.yml:ci/distro.yml
+          ${KAS_CONTAINER} lock --update ci/base.yml:ci/qcom-distro.yml
 
       - uses: actions/upload-artifact@v4
         with:
@@ -100,8 +100,8 @@ jobs:
         distro:
           - name: poky-altcfg
             yamlfile: ""
-          - name: qcom
-            yamlfile: ':ci/distro.yml'
+          - name: qcom-distro
+            yamlfile: ':ci/qcom-distro.yml'
     runs-on: [self-hosted, x86]
     name: ${{ matrix.machine }}/${{ matrix.distro.name }}
     steps:
