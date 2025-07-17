@@ -25,4 +25,5 @@ RDEPENDS:${PN}-miscellaneous = " \
     ${@bb.utils.contains("BBLAYERS", "openembedded-layer", "libssc","", d)} \
     libvmmem-dev \
     libdmabufheap-dev \
+    graphicsdlkm \
 "
