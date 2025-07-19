@@ -103,7 +103,7 @@ create_qcomflash_pkg() {
     done
 
     # boot firmware
-    for bfw in `find ${DEPLOY_DIR_IMAGE}/${QCOM_BOOT_FILES_SUBDIR} -maxdepth 1 -type f -name '*.elf' -o -name '*.mbn' -o -name '*.fv'`; do
+    for bfw in `find ${DEPLOY_DIR_IMAGE}/${QCOM_BOOT_FILES_SUBDIR} -maxdepth 1 -type f -name '*.elf' -o -name '*.mbn*' -o -name '*.fv'`; do
         install -m 0644 ${bfw} .
     done
 
