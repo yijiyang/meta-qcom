@@ -8,7 +8,6 @@ SRC_URI:append:qcom = " \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-sc7280-Add-global-PCIe-interrupt.patch \
     file://qcm6490-board-dts/0001-dt-bindings-PCI-Add-binding-for-Toshiba-TC9563-PCIe-.patch \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-qcs6490-rb3gen2-Add-TC9563-PCIe-switc.patch \
-    file://qcm6490-board-dts/0001-arm64-dts-qcom-sc7280-Add-support-for-camss.patch \
     file://qcm6490-board-dts/0001-PENDING-enable-xHCI.patch \
     file://qcm6490-board-dts/0002-arm64-dts-qcom-qcm6490-idp-Update-the-LPASS.patch \
     file://qcm6490-board-dts/0003-arm64-dts-qcom-qcs6490-rb3gen2-Update-the-LPASS-audi.patch \
@@ -33,7 +32,6 @@ SRC_URI:append:qcom = " \
     file://qcs9075-board-dts/0003-arm64-dts-qcom-qcs9075-Introduce-QCS9075M-SOM.patch \
     file://qcs9075-board-dts/0004-arm64-dts-qcom-Add-support-for-qcs9075-IQ-9075-EVK.patch \
     file://qcs9075-board-dts/0001-arm64-dts-qcom-qcs9075-iq-9075-evk-enable-UFS.patch \
-    file://qcs615-board-dts/0001-arm64-dts-qcom-qcs615-Add-Command-DB-support.patch \
 "
 
 # Include additional kernel configs.
