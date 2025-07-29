@@ -2,14 +2,6 @@
 
 DEPENDS:append:qcom = " skales-native xxd-native"
 
-FILESEXTRAPATHS:prepend:qcom := "${THISDIR}/files:"
-SRC_URI:append:qcom = " \
-           file://0001-clk-stub-generic-rpm-requests-compatible.patch \
-           file://0002-arm-dts-Add-override-for-RB1.patch \
-           file://0003-arm-mach-snapdragon-Enable-OF_UPSTREAM_BUILD_VENDOR.patch \
-           file://0004-qcom_defconfig-Disable-MMC-HS200-mode-support.patch \
-"
-
 # Don't add extra dependencies for non-qcom machines and layers
 COMPILE_EXTRA_DEPENDS = ""
 COMPILE_EXTRA_DEPENDS:qcom = "virtual/kernel:do_deploy"
