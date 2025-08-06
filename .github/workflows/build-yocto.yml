@@ -141,7 +141,7 @@ jobs:
           mv $KAS_WORK_DIR/build/buildchart.svg .
 
           if [ "${{ matrix.machine }}" = "qcom-armv8a" ]; then
-            ${KAS_CONTAINER} build ci/mirror.yml:ci/${{ matrix.machine }}.yml${{ matrix.kernel.yamlfile }}:ci/initramfs-test.yml
+            ${KAS_CONTAINER} build ci/mirror.yml:ci/${{ matrix.machine }}.yml${{ matrix.distro.yamlfile }}${{ matrix.kernel.yamlfile }}:ci/initramfs-test.yml
           fi
 
       - uses: actions/upload-artifact@v4
@@ -163,7 +163,7 @@ jobs:
           uploads_dir=./uploads/${{ matrix.distro.name }}${{ matrix.kernel.dirname }}/${{ matrix.machine }}
           mkdir -p $uploads_dir
           find $deploy_dir/ -maxdepth 1 -type f -exec cp {} $uploads_dir/ \;
-          find $deploy_dir/ -maxdepth 1 -type l -name boot-*.img -o -name *.rootfs.ext4.gz -o -name *.rootfs.qcomflash.tar.gz -exec cp -d {} $uploads_dir/ \;
+          find $deploy_dir/ -maxdepth 1 -type l \( -name boot-*.img -o -name *.rootfs.ext4.gz -o -name *.rootfs.qcomflash.tar.gz \) -exec cp -d {} $uploads_dir/ \;
           cp buildchart.svg kas-build.yml $uploads_dir/
 
       - name: Upload private artifacts
