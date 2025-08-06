@@ -102,6 +102,10 @@ create_qcomflash_pkg() {
         install -m 0644 ${zeros} .
     done
 
+    if [ -e "${DEPLOY_DIR_IMAGE}/${QCOM_PARTITION_FILES_SUBDIR}/contents.xml" ]; then
+        install -m 0644 "${DEPLOY_DIR_IMAGE}/${QCOM_PARTITION_FILES_SUBDIR}/contents.xml" contents.xml
+    fi
+
     # boot firmware
     for bfw in `find ${DEPLOY_DIR_IMAGE}/${QCOM_BOOT_FILES_SUBDIR} -maxdepth 1 -type f \
             -name '*.elf' -o \
