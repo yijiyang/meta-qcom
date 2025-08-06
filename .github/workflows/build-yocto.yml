@@ -141,7 +141,7 @@ jobs:
           mv $KAS_WORK_DIR/build/buildchart.svg .
 
           if [ "${{ matrix.machine }}" = "qcom-armv8a" ]; then
-            ${KAS_CONTAINER} build ci/mirror.yml:ci/${{ matrix.machine }}.yml${{ matrix.kernel.yamlfile }}:ci/initramfs-test.yml
+            ${KAS_CONTAINER} build ci/mirror.yml:ci/${{ matrix.machine }}.yml${{ matrix.distro.yamlfile }}${{ matrix.kernel.yamlfile }}:ci/initramfs-test.yml
           fi
 
       - uses: actions/upload-artifact@v4
