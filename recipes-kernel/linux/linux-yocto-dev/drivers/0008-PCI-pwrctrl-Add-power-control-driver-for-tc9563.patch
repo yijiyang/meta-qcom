@@ -42,7 +42,7 @@ index 990cab67d41332..d14ef2b0ffd84f 100644
  
 +config PCI_PWRCTRL_TC9563
 +	tristate "PCI Power Control driver for TC9563 PCIe switch"
-+	select PCI_PWRCTL
++	select PCI_PWRCTRL
 +	help
 +	  Say Y here to enable the PCI Power Control driver of TC9563 PCIe
 +	  switch.
