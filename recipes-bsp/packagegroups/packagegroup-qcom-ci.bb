@@ -10,4 +10,5 @@ RDEPENDS:${PN} = " \
     ${@bb.utils.contains("BBLAYERS", "openembedded-layer", "libssc","", d)} \
     libvmmem-dev \
     libdmabufheap-dev \
+    ${@bb.utils.contains("BBLAYERS", "openembedded-layer", "opencv","", d)} \
 "
