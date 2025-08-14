@@ -42,7 +42,7 @@ IMAGE_TYPEDEP:qcomflash += "${IMAGE_QCOMFLASH_FS_TYPE}"
 create_qcomflash_pkg() {
     # esp image
     if [ -n "${QCOM_ESP_FILE}" ]; then
-        install -m 0644 ${DEPLOY_DIR_IMAGE}/${QCOM_ESP_IMAGE}-${MACHINE}.rootfs.vfat ${QCOM_ESP_FILE}
+        install -m 0644 ${DEPLOY_DIR_IMAGE}/${QCOM_ESP_IMAGE}-${MACHINE}${IMAGE_NAME_SUFFIX}.vfat ${QCOM_ESP_FILE}
     fi
 
     # dtb image
