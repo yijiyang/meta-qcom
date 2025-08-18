@@ -31,8 +31,6 @@ jobs:
           done
 
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Run kas lock
         run: |
@@ -49,8 +47,6 @@ jobs:
     runs-on: [self-hosted, qcom-u2404, amd64-ssd]
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/download-artifact@v4
         with:
@@ -106,8 +102,6 @@ jobs:
     name: ${{ matrix.machine }}/${{ matrix.distro.name }}${{ matrix.kernel.dirname }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/download-artifact@v4
         with:
