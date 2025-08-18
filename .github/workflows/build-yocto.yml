@@ -162,7 +162,7 @@ jobs:
     needs: compile
     outputs:
       url: ${{ steps.print-output.outputs.url }}
-    runs-on: [self-hosted, qcom-u2404, amd64-ssd]
+    runs-on: ubuntu-latest
     steps:
       - name: "Print output"
         id: print-output
