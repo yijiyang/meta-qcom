@@ -13,9 +13,10 @@ SRC_URI = "\
     file://cdsprpcd.service \
     file://sdsprpcd.service \
     file://guess-dsp.sh \
+    file://run-ptest \
 "
 
-inherit autotools systemd
+inherit autotools systemd ptest
 
 PACKAGES += "${PN}-systemd"
 RRECOMMENDS:${PN} += "${PN}-systemd"
@@ -51,6 +52,8 @@ FILES:${PN} += " \
 "
 
 FILES:${PN}-dev:remove = "${FILES_SOLIBSDEV}"
+
+RDEPENDS:${PN}-ptest += "${PN}-tests"
 
 # We need to include lib*dsprpc.so into fastrpc for compatibility with Hexagon SDK
 INSANE_SKIP:${PN} = "dev-so"
