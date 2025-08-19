@@ -7,6 +7,7 @@ PACKAGE_INSTALL += " \
     coreutils \
     expect \
     hdparm \
+    igt-gpu-tools-tests \
     kexec \
     lsof \
     ncurses \
