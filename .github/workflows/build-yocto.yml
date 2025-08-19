@@ -31,8 +31,6 @@ jobs:
           done
 
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Run kas lock
         run: |
@@ -43,14 +41,12 @@ jobs:
           name: kas-lock
           path: ci/*.lock.yml
 
-  yocto-check-layer:
+  yocto-run-checks:
     needs: kas-setup
     if: github.repository == 'qualcomm-linux/meta-qcom'
     runs-on: [self-hosted, qcom-u2404, amd64-ssd]
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/download-artifact@v4
         with:
@@ -60,20 +56,6 @@ jobs:
       - name: Run yocto-check-layer
         run: |
           ci/kas-container-shell-helper.sh ci/yocto-check-layer.sh
-
-  yocto-patchreview:
-    needs: kas-setup
-    if: github.repository == 'qualcomm-linux/meta-qcom'
-    runs-on: [self-hosted, qcom-u2404, amd64-ssd]
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: kas-lock
-          path: ci/
 
       - name: Run Yocto patchreview
         run: |
@@ -120,8 +102,6 @@ jobs:
     name: ${{ matrix.machine }}/${{ matrix.distro.name }}${{ matrix.kernel.dirname }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/download-artifact@v4
         with:
@@ -176,7 +156,7 @@ jobs:
     needs: compile
     outputs:
       url: ${{ steps.print-output.outputs.url }}
-    runs-on: [self-hosted, qcom-u2404, amd64-ssd]
+    runs-on: ubuntu-latest
     steps:
       - name: "Print output"
         id: print-output
