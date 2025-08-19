@@ -11,4 +11,5 @@ RDEPENDS:${PN} = " \
     libvmmem-dev \
     libdmabufheap-dev \
     ${@bb.utils.contains("BBLAYERS", "openembedded-layer", "opencv","", d)} \
+    sigma-dut \
 "
