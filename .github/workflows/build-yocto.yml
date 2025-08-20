@@ -8,7 +8,7 @@ on:
         value: ${{ jobs.create-output.outputs.url }}
 
 env:
-  CACHE_DIR: /efs/qli/meta-qcom/
+  CACHE_DIR: /efs/qli/meta-qcom
   KAS_REPO_REF_DIR: /efs/qli/meta-qcom/kas-mirrors
   KAS_CONTAINER: /efs/qli/meta-qcom/kas-mirrors/kas-container
 
@@ -108,10 +108,16 @@ jobs:
           name: kas-lock
           path: ci/
 
+      - name: OE sstate-cache and downloads
+        run: |
+          # use a monthly sstate cache folder
+          # keep current and last month to allow smooth end of month transition
+          rm -rf ${CACHE_DIR}/sstate-cache-$(date -d '2 months ago' '+%Y-%m')
+          echo "DL_DIR=${CACHE_DIR}/downloads" >> $GITHUB_ENV
+          echo "SSTATE_DIR=${CACHE_DIR}/sstate-cache-$(date '+%Y-%m')" >> $GITHUB_ENV
+
       - name: Kas build
         run: |
-          export DL_DIR=${CACHE_DIR}/downloads
-          export SSTATE_DIR=${CACHE_DIR}/sstate-cache
           export KAS_WORK_DIR=$PWD/../kas
           mkdir $KAS_WORK_DIR
           ${KAS_CONTAINER} dump --resolve-env --resolve-local --resolve-refs \
