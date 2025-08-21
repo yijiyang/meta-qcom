@@ -15,11 +15,13 @@ PACKAGE_INSTALL += " \
     ncurses-terminfo-base \
     net-tools \
     openssh-sftp-server \
+    pulseaudio-misc \
     rng-tools \
     stress-ng \
     util-linux \
     util-linux-chrt \
     util-linux-lsblk \
+    weston-examples \
 "
 
 PACKAGE_INSTALL:append:libc-glibc = " \
@@ -44,6 +46,7 @@ PACKAGE_INSTALL_openembedded-layer += " \
     makedumpfile \
     mbw \
     ncurses-terminfo-base \
+    pipewire-tools \
     sysbench \
     tinymembench \
     tiobench \
