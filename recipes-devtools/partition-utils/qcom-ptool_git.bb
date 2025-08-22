@@ -9,7 +9,7 @@ RDEPENDS:${PN} += "python3-xml"
 
 SRC_URI = "git://github.com/qualcomm-linux/qcom-ptool.git;branch=main;protocol=https"
 
-SRCREV = "be9d04e7940c777d361f05f0468e260ee493b76e"
+SRCREV = "e71fe81f06e18deb4a25425f8a781d04a0f9cbde"
 
 PV = "0.0+git"
 
