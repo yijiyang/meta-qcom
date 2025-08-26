@@ -98,6 +98,14 @@ jobs:
                 type: additional
                 dirname: "+linux-yocto-dev"
                 yamlfile: ":ci/linux-yocto-dev.yml"
+          - machine: qcom-armv8a
+            distro:
+                name: qcom-distro
+                yamlfile: ':ci/qcom-distro.yml'
+            kernel:
+                type: additional
+                dirname: "+linux-yocto-lts"
+                yamlfile: ":ci/linux-yocto-lts.yml"
     runs-on: [self-hosted, qcom-u2404, amd64-ssd]
     name: ${{ matrix.machine }}/${{ matrix.distro.name }}${{ matrix.kernel.dirname }}
     steps:
