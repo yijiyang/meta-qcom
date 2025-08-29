@@ -6,6 +6,7 @@ PACKAGE_INSTALL += " \
     bootrr \
     coreutils \
     expect \
+    fastrpc-tests \
     hdparm \
     igt-gpu-tools-tests \
     kexec \
