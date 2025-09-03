@@ -25,5 +25,5 @@ module_conf_msm_kgsl = "blacklist msm_kgsl"
 FILES:${PN} += "${nonarch_base_libdir}/udev/rules.d"
 
 # The module is only promised to support ARMv8 machines
-COMPATIBLE_MACHINES = ""
-COMPATIBLE_MACHINES:aarch64 = "(.*)"
+COMPATIBLE_MACHINE = ""
+COMPATIBLE_MACHINE:aarch64 = "(.*)"
