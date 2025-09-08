@@ -20,4 +20,5 @@ RDEPENDS:${PN} = " \
 RDEPENDS:${PN}:append:aarch64 = " \
     iris-video-dlkm \
     kgsl-dlkm \
+    qcom-fastcv-binaries \
 "
