@@ -17,6 +17,7 @@ RDEPENDS:${PN}-boot-essential = " \
 
 RDEPENDS:${PN}-boot-additional = " \
     fastrpc \
+    ${@bb.utils.contains_any('DISTRO_FEATURES', 'opengl vulkan', 'msm-gbm-backend', '', d)} \
 "
 
 # libssc depends on libqmi and protobuf which are part of meta-oe
