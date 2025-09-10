@@ -12,5 +12,5 @@ MAKE_TARGETS = "modules"
 
 # This package is designed to run exclusively on ARMv8 (aarch64) machines.
 # Therefore, builds for other architectures are not necessary and are explicitly excluded.
-COMPATIBLE_MACHINE = ""
+COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:aarch64 = "(.*)"
