@@ -6,7 +6,6 @@ PACKAGE_INSTALL += " \
     bootrr \
     coreutils \
     expect \
-    fastrpc-tests \
     hdparm \
     igt-gpu-tools-tests \
     kexec \
@@ -23,6 +22,10 @@ PACKAGE_INSTALL += " \
     util-linux-chrt \
     util-linux-lsblk \
     weston-examples \
+"
+
+PACKAGE_INSTALL:append:aarch64 = " \
+    fastrpc-tests \
 "
 
 PACKAGE_INSTALL:append:libc-glibc = " \

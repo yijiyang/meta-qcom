@@ -68,3 +68,8 @@ FILES:${PN}-tests += " \
 
 # Tests specific packages are including prebuilt test libraries
 INSANE_SKIP:${PN}-tests += "arch libdir ldflags"
+
+# This package is currently only used and tested on ARMv8 (aarch64) machines.
+# Therefore, builds for other architectures are not necessary and are explicitly excluded.
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE:aarch64 = "(.*)"

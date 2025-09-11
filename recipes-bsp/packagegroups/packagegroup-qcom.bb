@@ -1,5 +1,7 @@
 SUMMARY = "Extra userspace packages for QCOM platforms"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 inherit packagegroup
 
 PACKAGES = " \
@@ -16,6 +18,8 @@ RDEPENDS:${PN}-boot-essential = " \
 "
 
 RDEPENDS:${PN}-boot-additional = " \
-    fastrpc \
     ${@bb.utils.contains_any('DISTRO_FEATURES', 'opengl vulkan', 'msm-gbm-backend', '', d)} \
+"
+RDEPENDS:${PN}-boot-additional:append:aarch64 = " \
+    fastrpc \
 "
