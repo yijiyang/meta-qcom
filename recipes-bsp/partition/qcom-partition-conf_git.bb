@@ -4,7 +4,7 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b0a8acd90d872086b279ead88af03369"
 
 SRC_URI = "git://github.com/qualcomm-linux/qcom-ptool.git;branch=main;protocol=https"
-SRCREV = "e71fe81f06e18deb4a25425f8a781d04a0f9cbde"
+SRCREV = "fc12ab8c4e79c2502e1967c7f4a503b16a5f5e6f"
 
 INHIBIT_DEFAULT_DEPS = "1"
 
@@ -25,6 +25,9 @@ do_deploy() {
         install -m 0644 ${QCOM_PLATFORM_SUBDIR}/rawprogram*.xml -D ${DEPLOYDIR}/partitions/${QCOM_PLATFORM_SUBDIR}
         install -m 0644 ${QCOM_PLATFORM_SUBDIR}/zeros_*.bin -D ${DEPLOYDIR}/partitions/${QCOM_PLATFORM_SUBDIR}
         install -m 0644 ${QCOM_PLATFORM_SUBDIR}/wipe_rawprogram_PHY*.xml -D ${DEPLOYDIR}/partitions/${QCOM_PLATFORM_SUBDIR}
+        if [ -e "${QCOM_PLATFORM_SUBDIR}/contents.xml" ]; then
+            install -m 0644 ${QCOM_PLATFORM_SUBDIR}/contents.xml ${DEPLOYDIR}/partitions/${QCOM_PLATFORM_SUBDIR}
+        fi
     done
 }
 addtask deploy before do_build after do_compile
