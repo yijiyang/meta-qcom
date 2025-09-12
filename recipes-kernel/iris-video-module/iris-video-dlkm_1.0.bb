@@ -4,7 +4,7 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=12f884d2ae1ff87c09e5b7ccc2c4ca7e"
 
 SRC_URI = "git://github.com/qualcomm-linux/video-driver.git;protocol=https;branch=video.qclinux.0.0"
-SRCREV  = "466922b32a5f967176651ace14c38f6874c61b9b"
+SRCREV  = "170ac561d70a366bc6502810079fa6b6c914920d"
 
 inherit module
 
