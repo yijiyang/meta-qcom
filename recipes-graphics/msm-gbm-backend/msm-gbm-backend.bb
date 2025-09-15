@@ -16,7 +16,7 @@ SRC_URI = "git://git.codelinaro.org/clo/le/display/libgbm.git;branch=display.qcl
 inherit meson pkgconfig features_check
 
 DEPENDS = "mesa libdrm libxml2"
-ANY_OF_DISTRO_FEATURES = "opengl vulkan"
+REQUIRED_DISTRO_FEATURES = "opengl"
 
 FILES:${PN} = "${libdir}/gbm/msm_gbm.so* ${sysconfdir}/gbm/default_fmt_alignment.xml"
 
