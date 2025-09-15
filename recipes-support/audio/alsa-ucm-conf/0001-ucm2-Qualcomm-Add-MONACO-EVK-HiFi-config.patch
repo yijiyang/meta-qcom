@@ -1,7 +1,7 @@
-From c9b642bff5b829f5c089033987bfeb832ef39f62 Mon Sep 17 00:00:00 2001
+From 78c3ef3296d7eeed18cf632307e63ecfda04bb27 Mon Sep 17 00:00:00 2001
 From: Mohammad Rafi Shaik <mohammad.rafi.shaik@oss.qualcomm.com>
 Date: Mon, 4 Aug 2025 11:35:11 +0530
-Subject: [PATCH] FROMLIST: ucm2: Qualcomm: Add MONACO-EVK HiFi config
+Subject: [PATCH] ucm2: Qualcomm: Add MONACO-EVK HiFi config
 
 Add UCM2 configs for the Qualcomm MONACO-EVK Board to handle:
 	- I2S Speaker Amplifier
@@ -10,19 +10,19 @@ Add UCM2 configs for the Qualcomm MONACO-EVK Board to handle:
 Signed-off-by: Mohammad Rafi Shaik <mohammad.rafi.shaik@oss.qualcomm.com>
 Upstream-Status: Submitted [https://github.com/alsa-project/alsa-ucm-conf/pull/597]
 ---
- ucm2/Qualcomm/qcs8275/monaco-evk/HiFi.conf    | 30 +++++++++++++++++++
- .../qcs8275/monaco-evk/MONACO-EVK.conf        |  6 ++++
- ucm2/conf.d/qcs8275/MONACO-EVK.conf           |  6 ++++
+ ucm2/Qualcomm/qcs8300/monaco-evk/HiFi.conf    | 30 +++++++++++++++++++
+ .../qcs8300/monaco-evk/MONACO-EVK.conf        |  6 ++++
+ ucm2/conf.d/qcs8300/MONACO-EVK.conf           |  6 ++++
  3 files changed, 42 insertions(+)
- create mode 100644 ucm2/Qualcomm/qcs8275/monaco-evk/HiFi.conf
- create mode 100644 ucm2/Qualcomm/qcs8275/monaco-evk/MONACO-EVK.conf
- create mode 100644 ucm2/conf.d/qcs8275/MONACO-EVK.conf
+ create mode 100644 ucm2/Qualcomm/qcs8300/monaco-evk/HiFi.conf
+ create mode 100644 ucm2/Qualcomm/qcs8300/monaco-evk/MONACO-EVK.conf
+ create mode 100644 ucm2/conf.d/qcs8300/MONACO-EVK.conf
 
-diff --git a/ucm2/Qualcomm/qcs8275/monaco-evk/HiFi.conf b/ucm2/Qualcomm/qcs8275/monaco-evk/HiFi.conf
+diff --git a/ucm2/Qualcomm/qcs8300/monaco-evk/HiFi.conf b/ucm2/Qualcomm/qcs8300/monaco-evk/HiFi.conf
 new file mode 100644
 index 0000000..8345129
 --- /dev/null
-+++ b/ucm2/Qualcomm/qcs8275/monaco-evk/HiFi.conf
++++ b/ucm2/Qualcomm/qcs8300/monaco-evk/HiFi.conf
 @@ -0,0 +1,30 @@
 +SectionVerb {
 +	Value {
@@ -54,28 +54,28 @@ index 0000000..8345129
 +		CaptureChannels 1
 +	}
 +}
-diff --git a/ucm2/Qualcomm/qcs8275/monaco-evk/MONACO-EVK.conf b/ucm2/Qualcomm/qcs8275/monaco-evk/MONACO-EVK.conf
+diff --git a/ucm2/Qualcomm/qcs8300/monaco-evk/MONACO-EVK.conf b/ucm2/Qualcomm/qcs8300/monaco-evk/MONACO-EVK.conf
 new file mode 100644
-index 0000000..e4d98b0
+index 0000000..d9d2f35
 --- /dev/null
-+++ b/ucm2/Qualcomm/qcs8275/monaco-evk/MONACO-EVK.conf
++++ b/ucm2/Qualcomm/qcs8300/monaco-evk/MONACO-EVK.conf
 @@ -0,0 +1,6 @@
 +Syntax 4
 +
 +SectionUseCase."HiFi" {
-+	File "/Qualcomm/qcs8275/monaco-evk/HiFi.conf"
++	File "/Qualcomm/qcs8300/monaco-evk/HiFi.conf"
 +	Comment "HiFi quality Music"
 +}
-diff --git a/ucm2/conf.d/qcs8275/MONACO-EVK.conf b/ucm2/conf.d/qcs8275/MONACO-EVK.conf
+diff --git a/ucm2/conf.d/qcs8300/MONACO-EVK.conf b/ucm2/conf.d/qcs8300/MONACO-EVK.conf
 new file mode 100644
-index 0000000..3514938
+index 0000000..c336a41
 --- /dev/null
-+++ b/ucm2/conf.d/qcs8275/MONACO-EVK.conf
++++ b/ucm2/conf.d/qcs8300/MONACO-EVK.conf
 @@ -0,0 +1,6 @@
 +Syntax 4
 +
 +SectionUseCase."HiFi" {
-+	File "/Qualcomm/qcs8275/monaco-evk/HiFi.conf"
++	File "/Qualcomm/qcs8300/monaco-evk/HiFi.conf"
 +	Comment "HiFi quality Music."
 +}
 -- 
