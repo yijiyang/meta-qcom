@@ -14,6 +14,11 @@ S = "${UNPACKDIR}"
 
 RDEPENDS:${PN} += "glib-2.0"
 
+# This package is currently only used and tested on ARMv8 (aarch64) machines.
+# Therefore, builds for other architectures are not necessary and are explicitly excluded.
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE:aarch64 = "(.*)"
+
 do_install() {
     install -d ${D}${libdir}/pkgconfig
     install -d ${D}${datadir}/doc/${PN}
