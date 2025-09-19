@@ -5,14 +5,10 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://adreno.c;beginline=1;endline=1;md5=fcab174c20ea2e2bc0be64b493708266"
 
 PV = "0.0+git"
-SRCREV = "56d7a36e6b95d3e311fe22f93be98d9d5943036d"
+SRCREV = "4e344efc57f9b2dee8b7b439799d61772903d194"
 SRC_URI = " \
     git://github.com/qualcomm-linux/kgsl.git;branch=gfx-kernel.le.0.0;protocol=https \
     file://kgsl.rules \
-"
-SRC_URI += " \
-    file://0007-kgsl-fix-undefined-platform_bus_type-error.patch \
-    file://0008-kgsl-fix-building-with-6.12-qcom_scm_set_gpu_smmu_ap.patch \
 "
 
 do_install:append() {
