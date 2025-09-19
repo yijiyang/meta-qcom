@@ -31,4 +31,3 @@ local_conf_header:
 
 target:
   - qcom-multimedia-image
-  - packagegroup-qcom-ci
