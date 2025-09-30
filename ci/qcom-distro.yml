@@ -15,7 +15,7 @@ repos:
     layers:
       meta-filesystems:
       meta-gnome:
-      meta-multimedia: 
+      meta-multimedia:
       meta-networking:
       meta-oe:
       meta-python:
