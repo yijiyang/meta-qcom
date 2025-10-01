@@ -30,8 +30,6 @@ runs:
       shell: bash
       run: |
         # use a monthly sstate cache folder
-        # keep current and last month to allow smooth end of month transition
-        rm -rf ${{inputs.cache_dir}}/sstate-cache-$(date -d '2 months ago' '+%Y-%m')
         echo "DL_DIR=${{inputs.cache_dir}}/downloads" >> $GITHUB_ENV
         echo "SSTATE_DIR=${{inputs.cache_dir}}/sstate-cache-$(date '+%Y-%m')" >> $GITHUB_ENV
         echo "KAS_WORK_DIR=$PWD/../kas" >> $GITHUB_ENV
