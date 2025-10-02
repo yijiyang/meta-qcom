@@ -33,7 +33,9 @@ PACKAGE_INSTALL += " \
     util-linux-lscpu \
     util-linux-taskset \
     wpa-supplicant \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'opencl', 'clinfo', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'kmscube', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'vulkan', 'vulkan-tools', '', d)} \
 "
 
 # We'd like to include extra packages provided by layers which we do not depend
