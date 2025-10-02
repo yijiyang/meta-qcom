@@ -17,9 +17,6 @@ RDEPENDS:${PN}-boot-essential = " \
     tqftpserv \
 "
 
-RDEPENDS:${PN}-boot-additional = " \
-    ${@bb.utils.contains_any('DISTRO_FEATURES', 'opengl', 'msm-gbm-backend', '', d)} \
-"
 RDEPENDS:${PN}-boot-additional:append:aarch64 = " \
     fastrpc \
 "
