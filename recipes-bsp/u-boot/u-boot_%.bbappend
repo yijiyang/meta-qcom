@@ -8,7 +8,7 @@ COMPILE_EXTRA_DEPENDS:qcom = "virtual/kernel:do_deploy"
 do_compile[depends] += "${COMPILE_EXTRA_DEPENDS}"
 
 uboot_compile_config:append:qcom() {
-    cd ${B}/${config}
+    cd ${B}/${builddir}
     touch empty-file
     rm -f u-boot-nodtb.bin.gz
     gzip -k u-boot-nodtb.bin
