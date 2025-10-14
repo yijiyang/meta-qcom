@@ -4,7 +4,7 @@ DESCRIPTION = "Linux ${PV} kernel for QCOM devices"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
-inherit kernel
+inherit kernel cml1
 
 COMPATIBLE_MACHINE = "(qcom)"
 
@@ -41,5 +41,5 @@ do_configure:prepend() {
     cp ${S}/arch/${ARCH}/configs/${KBUILD_DEFCONFIG} ${B}/.config
 
     # Merge fragment for QCOM value add features
-    ${S}/scripts/kconfig/merge_config.sh -m -O ${B} ${B}/.config ${UNPACKDIR}/configs/qcom.cfg
+    ${S}/scripts/kconfig/merge_config.sh -m -O ${B} ${B}/.config ${@" ".join(find_cfgs(d))}
 }
