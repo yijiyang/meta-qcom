@@ -11,14 +11,14 @@ actions:
       rootfs:
         headers:
           Authentication: Q_GITHUB_TOKEN
-        url: "{{BUILD_DOWNLOAD_URL}}/qcom-distro/qcom-armv8a/core-image-base-qcom-armv8a.rootfs.ext4.gz"
+        url: "{{BUILD_DOWNLOAD_URL}}/qcom-distro/qcom-armv8a/qcom-multimedia-image-qcom-armv8a.rootfs.ext4.gz"
         compression: gz
     postprocess:
       docker:
         image: ghcr.io/foundriesio/lava-lmp-sign:main
         steps:
         - export IMAGE_PATH=$PWD
-        - img2simg core-image-base-qcom-armv8a.rootfs.ext4 core-image-base-qcom-armv8a.rootfs.img
+        - img2simg qcom-multimedia-image-qcom-armv8a.rootfs.ext4 qcom-multimedia-image-qcom-armv8a.rootfs.img
 - deploy:
     timeout:
       minutes: 15
@@ -27,7 +27,7 @@ actions:
       boot:
         url: downloads://boot-apq8096-db820c-qcom-armv8a.img
       rootfs:
-        url: downloads://core-image-base-qcom-armv8a.rootfs.img
+        url: downloads://qcom-multimedia-image-qcom-armv8a.rootfs.img
         apply-overlay: true
 - command:
     name: pre_power_command
