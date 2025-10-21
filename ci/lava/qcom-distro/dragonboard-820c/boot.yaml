@@ -41,6 +41,8 @@ actions:
     auto_login:
       login_prompt: 'login:'
       username: root
+      password_prompt: 'Password'
+      password: oelinux123
     prompts:
     - 'root@qcom-armv8a'
     timeout:
