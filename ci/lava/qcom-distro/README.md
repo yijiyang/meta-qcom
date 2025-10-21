@@ -16,7 +16,7 @@ This happens for the following triggers:
 Job templates can use the following variables:
  - `DEVICE_TYPE`: name of the LAVA device type or alias. Full list can be found on [LAVA master web interface](https://lava.infra.foundries.io/scheduler/device_types)
  - `GITHUB_SHA`: Commit ID corresponding to the github action trigger
- - `BUILD_FILE_NAME`: Name of the build artifact to be downloaded. It's constructed as: `core-image-base-${DEVICE_TYPE}.rootfs.qcomflash.tar.gz`
+ - `BUILD_FILE_NAME`: Name of the build artifact to be downloaded. It's constructed as: `qcom-multimedia-image-${DEVICE_TYPE}.rootfs.qcomflash.tar.gz`
  - `BUILD_DOWNLOAD_URL`: URL where the build artifacts can be found. This variable is constructed as: `${{inputs.url}}/${DEVICE_TYPE}/${BUILD_FILE_NAME}` where `{{inputs.url}}` comes from the build action.
  - `GITHUB_RUN_ID`: ID of the current Github run.
 
