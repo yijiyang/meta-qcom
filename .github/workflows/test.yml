@@ -49,15 +49,17 @@ jobs:
               if [ "${{ matrix.machine }}" = "qcom-armv8a" ]; then
                   python3 ci/generatetests.py --templates ci/lava --os ${{ matrix.distro.name }} --device dragonboard-410c --build-url "${BUILD_URL}"
                   python3 ci/generatetests.py --templates ci/lava --os ${{ matrix.distro.name }} --device dragonboard-820c --build-url "${BUILD_URL}"
+                  echo "MACHINE=dragonboard" >> $GITHUB_ENV
               else
                   python3 ci/generatetests.py --templates ci/lava --os ${{ matrix.distro.name }} --device ${{ matrix.machine }} --build-url "${BUILD_URL}"
+                  echo "MACHINE=${{ matrix.machine }}" >> $GITHUB_ENV
               fi
           fi
       - name: 'Upload test jobs'
         uses: actions/upload-artifact@v4
         with:
           name: testjobs-${{ matrix.machine }}-${{ matrix.distro.name }}
-          path: ${{ matrix.machine }}-${{ matrix.distro.name }}-*.yaml
+          path: ${{ env.MACHINE}}*-${{ matrix.distro.name }}-*.yaml
 
   prepare-job-list:
     needs: prepare-jobs
